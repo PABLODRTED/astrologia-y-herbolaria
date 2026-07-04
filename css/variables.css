@@ -18,6 +18,8 @@
   --color-ciruela: #3E2D5C;      /* texto, navegación, líneas, estructura */
   --color-ciruela-suave: #5A4478; /* variante más clara de ciruela para texto secundario */
   --color-oro: #B8924A;          /* acento escaso: SOLO hover, íconos, detalles puntuales */
+  --color-oro-texto: #7A5C26;    /* variante oscura del oro, para usar como color de TEXTO sobre fondos claros (cumple contraste AA) */
+  --color-oro-claro: #D2AC66;    /* variante clara del oro, para usar como color de TEXTO sobre fondos oscuros (ciruela) */
   --color-blanco: #FFFFFF;
 
   /* --- Tipografía --- */

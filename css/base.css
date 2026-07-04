@@ -52,12 +52,14 @@ a {
 }
 
 a:hover, a:focus-visible {
-  color: var(--color-oro); /* único lugar donde el oro reemplaza texto: hover */
+  color: var(--color-oro-texto); /* variante oscura del oro: cumple contraste AA sobre fondos claros */
 }
 
-/* Accesibilidad: foco visible siempre, nunca lo quitamos */
+/* Accesibilidad: foco visible siempre, nunca lo quitamos.
+   Ciruela por defecto (funciona sobre los fondos claros, que son ~95% del sitio);
+   se sobreescribe a champán dentro de secciones de fondo oscuro (ver .pie, .cta-destacado). */
 :focus-visible {
-  outline: 2px solid var(--color-oro);
+  outline: 2px solid var(--color-ciruela);
   outline-offset: 2px;
 }
 

@@ -98,5 +98,6 @@ function activarMenuMovil() {
   boton.addEventListener('click', () => {
     const abierto = nav.classList.toggle('abierto');
     boton.setAttribute('aria-expanded', String(abierto));
+    boton.setAttribute('aria-label', abierto ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
   });
 }

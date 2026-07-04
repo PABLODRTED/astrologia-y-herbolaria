@@ -124,7 +124,7 @@
 }
 
 .boton--secundario:hover, .boton--secundario:focus-visible {
-  color: var(--color-oro);
+  color: var(--color-oro-texto);
   border-color: var(--color-oro);
 }
 
@@ -266,6 +266,49 @@
   margin-bottom: var(--espacio-md);
 }
 
+/* ---------- Preguntas frecuentes (acordeón nativo, sin JS) ---------- */
+.faq {
+  max-width: var(--ancho-lectura);
+  margin-top: var(--espacio-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.faq__item {
+  background-color: var(--color-blanco);
+  border: 1px solid rgba(62, 45, 92, 0.12);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-sm) var(--espacio-md);
+}
+
+.faq__item summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.1em;
+  color: var(--color-oro-texto);
+  font-weight: 700;
+}
+
+.faq__item[open] summary::before {
+  content: "–";
+}
+
+.faq__item p {
+  margin: var(--espacio-xs) 0 0 1.1em;
+  color: var(--color-ciruela-suave);
+}
+
 /* ---------- Newsletter ---------- */
 .newsletter {
   background-color: var(--color-rosa-palido);
@@ -326,7 +369,7 @@
 }
 
 .cta-destacado .boton--secundario:hover {
-  color: var(--color-oro);
+  color: var(--color-oro-claro);
   border-color: var(--color-oro);
 }
 
@@ -334,6 +377,12 @@
   margin-top: var(--espacio-sm);
   font-size: var(--tamano-pequeno);
   opacity: 0.9;
+}
+
+/* El foco por defecto es ciruela (ver base.css), invisible sobre este fondo
+   oscuro: aquí lo cambiamos a champán para que siga siendo visible. */
+.cta-destacado :focus-visible {
+  outline-color: var(--color-champan);
 }
 
 /* ---------- Footer ---------- */
@@ -350,7 +399,7 @@
 }
 
 .pie a:hover, .pie a:focus-visible {
-  color: var(--color-oro);
+  color: var(--color-oro-claro);
 }
 
 .pie__grilla {
@@ -375,6 +424,12 @@
 .pie h3 {
   color: var(--color-champan);
   font-size: 1.1rem;
+}
+
+/* Mismo motivo que en .cta-destacado: el foco por defecto (ciruela) es
+   invisible sobre este fondo oscuro. */
+.pie :focus-visible {
+  outline-color: var(--color-champan);
 }
 
 /* ---------- Notas de cuidado / límites (Línea B, protocolo de crisis) ---------- */
