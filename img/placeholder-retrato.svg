@@ -1,0 +1,9 @@
+<!-- Placeholder de retrato — reemplaza este archivo por una fotografía real
+     (por ejemplo img/francisca-retrato.jpg) y actualiza el <img src> en
+     sobre-mi.html. No olvides escribir un alt text descriptivo. -->
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="500" fill="#F6E9E4"/>
+  <circle cx="200" cy="190" r="70" fill="none" stroke="#3E2D5C" stroke-width="1"/>
+  <path d="M200 260 C 130 260 90 320 90 420 L 310 420 C 310 320 270 260 200 260 Z" fill="none" stroke="#3E2D5C" stroke-width="1"/>
+  <text x="200" y="470" font-family="Mulish, sans-serif" font-size="14" fill="#5A4478" text-anchor="middle">Fotografía pendiente de reemplazo</text>
+</svg>

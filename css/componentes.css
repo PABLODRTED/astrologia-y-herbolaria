@@ -1,0 +1,388 @@
+/* ============================================================
+   COMPONENTES — header, footer, botones, tarjetas, formularios
+   ============================================================ */
+
+/* ---------- Header / navegación ---------- */
+.encabezado {
+  background-color: var(--color-champan);
+  border-bottom: 1px solid rgba(62, 45, 92, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.encabezado__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacio-sm) 0;
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding-left: var(--espacio-sm);
+  padding-right: var(--espacio-sm);
+}
+
+.encabezado__logo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-ciruela);
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+.encabezado__logo span {
+  display: block;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ciruela-suave);
+}
+
+.nav {
+  display: none;
+  gap: var(--espacio-md);
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.nav a.activo {
+  border-bottom: 1px solid var(--color-oro);
+}
+
+/* Menú móvil simple (checkbox-less, con atributo aria) */
+.nav-toggle {
+  display: block;
+  background: none;
+  border: 1px solid var(--color-ciruela);
+  border-radius: var(--radio-borde);
+  padding: 0.4rem 0.6rem;
+  color: var(--color-ciruela);
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.nav.abierto {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-champan);
+  border-bottom: 1px solid rgba(62, 45, 92, 0.15);
+  padding: var(--espacio-sm) var(--espacio-sm) var(--espacio-md);
+  gap: var(--espacio-sm);
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    position: static;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .nav-toggle { display: none; }
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  font-family: var(--fuente-cuerpo);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radio-borde);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.boton--primario {
+  background-color: var(--color-ciruela);
+  color: var(--color-champan);
+}
+
+.boton--primario:hover, .boton--primario:focus-visible {
+  background-color: var(--color-ciruela);
+  color: var(--color-champan);
+  border-color: var(--color-oro); /* el oro aparece como borde en hover, no como fondo */
+}
+
+.boton--secundario {
+  background-color: transparent;
+  color: var(--color-ciruela);
+  border: 1px solid var(--color-ciruela);
+}
+
+.boton--secundario:hover, .boton--secundario:focus-visible {
+  color: var(--color-oro);
+  border-color: var(--color-oro);
+}
+
+.boton--whatsapp {
+  background-color: var(--color-ciruela);
+  color: var(--color-champan);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boton--whatsapp:hover, .boton--whatsapp:focus-visible {
+  border-color: var(--color-oro);
+  color: var(--color-champan);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: var(--espacio-xl) 0 var(--espacio-lg);
+  text-align: center;
+}
+
+.hero__tagline {
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  color: var(--color-ciruela-suave);
+  margin-bottom: var(--espacio-sm);
+}
+
+.hero__subtitulo {
+  max-width: 60ch;
+  margin: 0 auto var(--espacio-md);
+  font-size: 1.05rem;
+}
+
+.hero__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+  align-items: center;
+}
+
+@media (min-width: 480px) {
+  .hero__acciones {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Ícono lineal decorativo (fase lunar / constelación) — trazo fino en oro, uso puntual */
+.icono-simbolico {
+  width: 32px;
+  height: 32px;
+  stroke: var(--color-oro);
+  fill: none;
+  stroke-width: 1;
+  margin: 0 auto var(--espacio-sm);
+  display: block;
+}
+
+/* ---------- Grillas ---------- */
+.grilla {
+  display: grid;
+  gap: var(--espacio-md);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grilla--2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .grilla--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Tarjetas de servicio ---------- */
+.tarjeta {
+  background-color: var(--color-blanco);
+  border: 1px solid rgba(62, 45, 92, 0.12);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.tarjeta__precio {
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  color: var(--color-ciruela);
+  margin-top: var(--espacio-xs);
+}
+
+.tarjeta__para-quien {
+  font-size: var(--tamano-pequeno);
+  color: var(--color-ciruela-suave);
+  font-style: italic;
+}
+
+.tarjeta__cta {
+  margin-top: auto;
+  padding-top: var(--espacio-sm);
+}
+
+/* ---------- Tarjetas de blog ---------- */
+.tarjeta-blog {
+  text-decoration: none;
+  color: var(--color-ciruela);
+  display: block;
+}
+
+.tarjeta-blog__imagen {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  margin-bottom: var(--espacio-xs);
+  background-color: var(--color-rosa-palido); /* placeholder visual mientras no hay foto */
+}
+
+.tarjeta-blog__fecha {
+  font-size: var(--tamano-pequeno);
+  color: var(--color-ciruela-suave);
+}
+
+/* ---------- Artículo de blog (tipografía de lectura larga) ---------- */
+.articulo {
+  max-width: var(--ancho-lectura);
+  margin: 0 auto;
+}
+
+.articulo p {
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.articulo__meta {
+  color: var(--color-ciruela-suave);
+  font-size: var(--tamano-pequeno);
+  margin-bottom: var(--espacio-md);
+}
+
+/* ---------- Newsletter ---------- */
+.newsletter {
+  background-color: var(--color-rosa-palido);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-lg) var(--espacio-md);
+  text-align: center;
+}
+
+.newsletter__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  max-width: 420px;
+  margin: var(--espacio-sm) auto 0;
+}
+
+@media (min-width: 480px) {
+  .newsletter__formulario {
+    flex-direction: row;
+  }
+}
+
+.newsletter__formulario input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-ciruela);
+  border-radius: var(--radio-borde);
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  background-color: var(--color-blanco);
+  color: var(--color-ciruela);
+}
+
+.newsletter--compacto {
+  background: none;
+  padding: var(--espacio-sm) 0 0;
+  text-align: left;
+}
+
+.newsletter--compacto .newsletter__formulario {
+  margin-left: 0;
+}
+
+/* ---------- CTA destacado (agendar hora) ---------- */
+.cta-destacado {
+  background-color: var(--color-ciruela);
+  color: var(--color-champan);
+  text-align: center;
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-lg) var(--espacio-md);
+}
+
+.cta-destacado h2 { color: var(--color-champan); }
+
+.cta-destacado .boton--secundario {
+  color: var(--color-champan);
+  border-color: var(--color-champan);
+}
+
+.cta-destacado .boton--secundario:hover {
+  color: var(--color-oro);
+  border-color: var(--color-oro);
+}
+
+.cta-destacado__modalidades {
+  margin-top: var(--espacio-sm);
+  font-size: var(--tamano-pequeno);
+  opacity: 0.9;
+}
+
+/* ---------- Footer ---------- */
+.pie {
+  background-color: var(--color-ciruela);
+  color: var(--color-champan);
+  padding: var(--espacio-lg) 0 var(--espacio-md);
+  margin-top: var(--espacio-xl);
+}
+
+.pie a {
+  color: var(--color-champan);
+  text-decoration-color: var(--color-oro);
+}
+
+.pie a:hover, .pie a:focus-visible {
+  color: var(--color-oro);
+}
+
+.pie__grilla {
+  display: grid;
+  gap: var(--espacio-md);
+  grid-template-columns: 1fr;
+  margin-bottom: var(--espacio-md);
+}
+
+@media (min-width: 640px) {
+  .pie__grilla { grid-template-columns: repeat(3, 1fr); }
+}
+
+.pie__legal {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  border-top: 1px solid rgba(242, 230, 214, 0.2);
+  padding-top: var(--espacio-sm);
+  max-width: 70ch;
+}
+
+.pie h3 {
+  color: var(--color-champan);
+  font-size: 1.1rem;
+}
+
+/* ---------- Notas de cuidado / límites (Línea B, protocolo de crisis) ---------- */
+.nota-cuidado {
+  background-color: var(--color-rosa-palido);
+  border-left: 3px solid var(--color-oro);
+  padding: var(--espacio-sm) var(--espacio-md);
+  font-size: var(--tamano-pequeno);
+  color: var(--color-ciruela-suave);
+  margin-top: var(--espacio-sm);
+}

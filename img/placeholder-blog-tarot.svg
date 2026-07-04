@@ -1,0 +1,8 @@
+<!-- Placeholder de imagen de blog — reemplaza por una fotografía o ilustración real -->
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F2E6D6"/>
+  <g stroke="#3E2D5C" stroke-width="1" fill="none">
+    <rect x="160" y="90" width="80" height="120" rx="4"/>
+    <circle cx="200" cy="150" r="24"/>
+  </g>
+</svg>

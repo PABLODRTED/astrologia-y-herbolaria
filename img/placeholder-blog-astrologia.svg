@@ -1,0 +1,11 @@
+<!-- Placeholder de imagen de blog — reemplaza por una fotografía o ilustración real -->
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F2E6D6"/>
+  <g stroke="#B8924A" stroke-width="1" fill="none">
+    <circle cx="120" cy="150" r="3"/>
+    <circle cx="200" cy="100" r="3"/>
+    <circle cx="260" cy="170" r="3"/>
+    <circle cx="310" cy="120" r="3"/>
+    <path d="M120 150 L200 100 L260 170 L310 120"/>
+  </g>
+</svg>
