@@ -24,6 +24,10 @@ There is no build, lint, or test tooling in this repo.
 - **Images are placeholders.** `img/placeholder-*.svg` files stand in for real photography (portrait, blog post images) and are referenced by `src` in `sobre-mi.html` and blog articles — swapping them means updating the `src` (and `alt`) attribute, not the SVGs themselves.
 - **Newsletter forms are non-functional placeholders.** The `<form>` markup in `partials/newsletter.html` and `partials/footer.html` doesn't submit anywhere yet; it's meant to be replaced with an embed snippet from whatever newsletter provider (e.g. MailerLite) is eventually chosen.
 
+## Frontend/design work
+
+A project skill at `.claude/skills/design-taste-frontend/SKILL.md` governs visual/design decisions on this site (landing-page/portfolio-style anti-slop guidance: infer design direction from the brief, avoid generic AI-default aesthetics). Consult it before making styling or layout changes.
+
 ## Deployment
 
 Intended target is Cloudflare Pages (Workers & Pages → Pages → Connect to Git), with build command empty and output directory `/` (no framework preset). GitHub Pages is a documented fallback (`main` branch as source).
