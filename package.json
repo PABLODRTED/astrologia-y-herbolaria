@@ -1,0 +1,12 @@
+{
+  "name": "astrologia-y-herbolaria",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web estático (HTML + CSS + JS, sin frameworks) para la marca Astrología y Herbolaria.",
+  "scripts": {
+    "dev": "serve"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
