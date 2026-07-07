@@ -28,6 +28,49 @@ There is no build, lint, or test tooling in this repo.
 
 A project skill at `.claude/skills/design-taste-frontend/SKILL.md` governs visual/design decisions on this site (landing-page/portfolio-style anti-slop guidance: infer design direction from the brief, avoid generic AI-default aesthetics). Consult it before making styling or layout changes.
 
+## Recommended Skills for This Project
+
+These skills are optimized for the three project focuses: site improvements, SEO/marketing continuous service, and future business automation.
+
+### For Website Improvements (Astrología/Herbolaria)
+- `/design-taste-frontend` - Anti-slop frontend design guidance (custom skill)
+- `/design:design-critique` - Design quality review and critique
+- `/design:accessibility-review` - WCAG compliance and accessibility checks
+- `/code-review` - HTML/CSS/JS code audit
+- `/verify` - Test changes in live site
+
+### For SEO/Marketing Continuous Service
+- `/searchfit-seo:seo-audit` - Full SEO audit and analysis
+- `/searchfit-seo:on-page-seo` - Meta tags, headings, keyword placement optimization
+- `/searchfit-seo:schema-markup` - Structured data (JSON-LD) implementation
+- `/searchfit-seo:technical-seo` - Performance, mobile usability, Core Web Vitals
+- `/searchfit-seo:broken-links` - Link health and broken link detection
+- `/searchfit-seo:internal-linking` - Internal navigation and link structure
+- `/searchfit-seo:content-strategy` - Content planning and strategy
+- `/searchfit-seo:content-brief` - Content briefing and preparation
+
+### For Content & Copy
+- `/marketing:draft-content` - Content creation and drafting
+- `/design:ux-copy` - Website copywriting and microcopy
+- `/brand-voice:enforce-voice` - Brand consistency and voice enforcement
+- `/brand-voice:discover-brand` - Brand audit and discovery
+
+### For Business Automation (When Implemented)
+These skills are disabled by default but available when you start implementing business automation:
+- `/small-business:crm-cleanup` - CRM data cleanup
+- `/small-business:customer-pulse` - Customer insights
+- `/productivity:task-management` - Task management (works best with Linear/Notion auth)
+
+**Note:** Many other skills are available but not recommended for current projects. See `.claude/settings.json` for the full `disabledSkills` list.
+
+## MCP Connectors & Authentication
+
+For full functionality, these MCP servers can be authenticated via claude.ai settings or `/mcp`:
+- **GitHub** (plugin:engineering:github) - For deployment to Cloudflare Pages/GitHub Pages
+- **Notion** (plugin:productivity:notion) - For project organization and documentation
+- **Linear** (plugin:productivity:linear) - For task automation (when implementing business automation)
+- **Slack** (plugin:productivity:slack) - For notifications and communication (optional)
+
 ## Deployment
 
 Intended target is Cloudflare Pages (Workers & Pages → Pages → Connect to Git), with build command empty and output directory `/` (no framework preset). GitHub Pages is a documented fallback (`main` branch as source).

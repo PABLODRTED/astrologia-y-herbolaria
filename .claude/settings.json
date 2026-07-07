@@ -1,0 +1,41 @@
+{
+  "enableWorkflows": true,
+  "syntaxHighlightingDisabled": true,
+  "autoUpdatesChannel": "latest",
+  "theme": "dark-ansi",
+  "inputNeededNotifEnabled": true,
+  "promptSuggestionEnabled": false,
+  "disabledSkills": [
+    "marketing:seo-audit",
+    "anthropic-skills:copywriting",
+    "small-business:crm-cleanup",
+    "small-business:cash-flow-snapshot",
+    "small-business:customer-pulse",
+    "small-business:sales-brief",
+    "small-business:invoice-chase",
+    "small-business:call-list",
+    "small-business:handle-complaint",
+    "small-business:lead-triage",
+    "small-business:price-check",
+    "small-business:margin-analyzer",
+    "small-business:close-month",
+    "small-business:month-end-prep",
+    "small-business:canva-creator",
+    "engineering:code-review",
+    "engineering:documentation",
+    "engineering:debug",
+    "engineering:testing-strategy",
+    "engineering:standup",
+    "engineering:incident-response",
+    "anthropic-skills:video",
+    "anthropic-skills:image",
+    "anthropic-skills:xlsx",
+    "anthropic-skills:docx",
+    "anthropic-skills:pptx"
+  ],
+  "disabledAgents": [
+    "brand-voice:guideline-generation",
+    "searchfit-seo:seo-auditor",
+    "searchfit-seo:competitor-analyzer"
+  ]
+}
