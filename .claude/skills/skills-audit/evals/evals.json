@@ -1,0 +1,43 @@
+{
+  "skill_name": "skills-audit",
+  "evals": [
+    {
+      "id": 1,
+      "name": "casual-astrology-seo-automation",
+      "prompt": "I have three projects: 1) a static HTML/CSS website for my herbal business that needs design polish and SEO, 2) I want to start offering SEO as a service to clients, 3) eventually I want to automate business stuff like CRM and invoicing. Right now I have too many skills activated and I see duplicate SEO tools. Can you audit and clean this up?",
+      "expected_output": "Audit matrix showing ~15 skills to keep (design, SEO specialist tools, content), ~28 to disable (small-business duplicates, generic marketing), identification of exact duplicates (code-review vs engineering:code-review), MCPs to authenticate (GitHub, Notion, Linear), and proposed .claude/settings.json config",
+      "assertions": [
+        "audit_identifies_duplicate_seo_skills",
+        "audit_recommends_specialized_over_generic_seo",
+        "audit_disables_unnecessary_small_business_skills",
+        "audit_creates_disable_config",
+        "audit_suggests_mcps_to_authenticate"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "json-structured-input",
+      "prompt": "```json\n{\n  \"projects\": [\n    {\"name\": \"content-site\", \"focus\": [\"design\", \"typography\", \"UX\"]},\n    {\"name\": \"data-dashboard\", \"focus\": [\"visualization\", \"analytics\", \"reporting\"]},\n    {\"name\": \"api-service\", \"focus\": [\"backend\", \"testing\", \"deployment\"]}\n  ],\n  \"pain_points\": [\"too many anthropic-skills:* are noise\", \"don't need small-business tools\"],\n  \"preferred_mcps\": [\"github\", \"datadog\"]\n}\n```\n\nPlease audit my available skills based on this structured input and tell me which ones to keep vs disable.",
+      "expected_output": "Audit matrix organized by project focus (design tools for content-site, visualization for dashboard, backend for API), identification that dashboard + backend projects reduce utility of small-business and design tools, proposed config disabling tools irrelevant to these three projects, MCPs list including GitHub + Datadog focus",
+      "assertions": [
+        "audit_parses_json_structured_input",
+        "audit_aligns_tools_with_project_focus",
+        "audit_identifies_out_of_scope_categories",
+        "audit_respects_preferred_mcps",
+        "audit_produces_valid_json_config"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "minimal-input-single-project",
+      "prompt": "I just have one project: a marketing landing page. I don't need all these tools. What should I keep?",
+      "expected_output": "Audit focused on landing page needs (design, UX, SEO, content, brand voice), disables everything unrelated (backend engineering, automation, data viz), produces minimal but focused recommended skills list",
+      "assertions": [
+        "audit_handles_single_project_input",
+        "audit_disables_unrelated_categories",
+        "audit_suggests_minimal_relevant_set",
+        "audit_config_is_executable"
+      ]
+    }
+  ]
+}
