@@ -33,11 +33,14 @@ A project skill at `.claude/skills/design-taste-frontend/SKILL.md` governs visua
 These skills are optimized for the three project focuses: site improvements, SEO/marketing continuous service, and future business automation.
 
 ### For Website Improvements (Astrología/Herbolaria)
-- `/design-taste-frontend` - Anti-slop frontend design guidance (custom skill)
+- `/design-taste-frontend` - Anti-slop frontend design guidance (custom skill) ⭐
 - `/design:design-critique` - Design quality review and critique
 - `/design:accessibility-review` - WCAG compliance and accessibility checks
+- `/design:ux-copy` - Website copywriting and UX microcopy
 - `/code-review` - HTML/CSS/JS code audit
+- `/simplify` - Code cleanup and refactoring
 - `/verify` - Test changes in live site
+- `/run` - Launch the site locally
 
 ### For SEO/Marketing Continuous Service
 - `/searchfit-seo:seo-audit` - Full SEO audit and analysis

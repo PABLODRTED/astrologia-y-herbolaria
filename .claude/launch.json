@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "serve (Node.js)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "--listen", "3000"],
+      "port": 3000
+    },
+    {
+      "name": "python-http-server",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8000"],
+      "port": 8000
+    },
+    {
+      "name": "node-http-server",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "require('http').createServer((q,s) => require('fs').createReadStream(require('path').join(__dirname, decodeURI(q.url==='/'?'/index.html':q.url))).pipe(s)).listen(3001)"],
+      "port": 3001
+    }
+  ]
+}
