@@ -52,8 +52,8 @@ Luego abre en tu navegador la dirección que aparezca en la terminal (algo como 
 
 ## 3. Cómo publicarlo gratis (dominio y hosting)
 
-Recomiendo **Cloudflare Pages** por ser la opción más simple para alguien sin experiencia técnica:
-no requiere configuración de build, es gratis, y conecta directo con GitHub.
+Recomiendo **Vercel** por ser la opción más simple para alguien sin experiencia técnica: no requiere
+configuración de build, es gratis, y conecta directo con GitHub.
 
 ### Paso a paso
 
@@ -63,25 +63,26 @@ no requiere configuración de build, es gratis, y conecta directo con GitHub.
    - En la página del repositorio recién creado, usa la opción "uploading an existing file" y arrastra
      todos los archivos y carpetas de este proyecto.
    - (Si usas Claude Code, también puedes pedirle que haga esto por ti con comandos de `git`.)
-3. **Crea una cuenta gratuita en Cloudflare** (cloudflare.com) si no tienes una.
-4. En el panel de Cloudflare, ve a **Workers & Pages → Create → Pages → Connect to Git**.
-5. Elige el repositorio que subiste. En la configuración de build:
-   - Framework preset: **None**
-   - Build command: (déjalo vacío)
-   - Build output directory: `/` (la raíz)
-6. Clic en **Save and Deploy**. En 1-2 minutos tendrás una URL gratuita tipo
-   `astrologia-y-herbolaria.pages.dev` funcionando.
+3. **Crea una cuenta gratuita en Vercel** (vercel.com), lo más simple es iniciar sesión con tu
+   cuenta de GitHub.
+4. En el panel de Vercel, ve a **Add New → Project → Import Git Repository**.
+5. Elige el repositorio que subiste. En la configuración del proyecto:
+   - Framework Preset: **Other** (o "No Framework")
+   - Build Command: (déjalo vacío)
+   - Output Directory: `./` (la raíz)
+6. Clic en **Deploy**. En 1-2 minutos tendrás una URL gratuita tipo
+   `astrologia-y-herbolaria.vercel.app` funcionando.
 
 ### Conectar tu propio dominio (cuando lo tengas)
 
 Una vez que compres un dominio (ej. en NIC Chile para `.cl`, o en cualquier registrador para `.com`):
-1. En el mismo proyecto de Cloudflare Pages, ve a **Custom domains → Set up a custom domain**.
-2. Sigue las instrucciones para apuntar tu dominio (Cloudflare te guía paso a paso, incluso si el
+1. En el mismo proyecto de Vercel, ve a **Settings → Domains → Add**.
+2. Sigue las instrucciones para apuntar tu dominio (Vercel te guía paso a paso, incluso si el
    dominio lo compraste en otro proveedor).
 
 **Alternativa:** GitHub Pages también es gratuita y funciona bien para este sitio (Settings → Pages →
-elegir la rama `main` como fuente), pero Cloudflare Pages ofrece mejor rendimiento y una configuración
-de dominio propio más simple para alguien sin experiencia técnica.
+elegir la rama `main` como fuente), pero Vercel ofrece mejor rendimiento y una configuración de
+dominio propio más simple para alguien sin experiencia técnica.
 
 ---
 
@@ -107,8 +108,8 @@ MailerLite), su plataforma te entregará un código de "embed" (HTML) para pegar
 `<form>...</form>` de esos dos archivos. No necesitas tocar nada más del sitio para esto.
 
 ### d) Dominio
-Aún no tienes uno — puedes publicar el sitio en la URL gratuita de Cloudflare Pages
-(`tu-sitio.pages.dev`) mientras decides y compras un dominio propio (ver sección 3).
+Aún no tienes uno — puedes publicar el sitio en la URL gratuita de Vercel
+(`tu-sitio.vercel.app`) mientras decides y compras un dominio propio (ver sección 3).
 
 ---
 
