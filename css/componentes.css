@@ -185,6 +185,15 @@
   display: block;
 }
 
+/* El centrado con margin:auto es correcto en el hero y en .newsletter (ambos
+   text-align:center), pero Línea A/B en servicios.html NO están centradas —
+   ahí el ícono debe alinearse a la izquierda, pegado al encabezado que
+   introduce, en vez de flotar centrado y desconectado del texto. */
+#linea-a .icono-simbolico,
+#linea-b .icono-simbolico {
+  margin: 0 0 var(--espacio-xs) 0;
+}
+
 /* ---------- Grillas ---------- */
 .grilla {
   display: grid;
@@ -209,6 +218,16 @@
   display: flex;
   flex-direction: column;
   gap: var(--espacio-xs);
+}
+
+.tarjeta__etiqueta {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ciruela);
+  margin-bottom: calc(-1 * var(--espacio-xs) / 2);
 }
 
 .tarjeta__precio {
@@ -274,6 +293,12 @@
   text-align: center;
 }
 
+.newsletter > p {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .newsletter__formulario {
   display: flex;
   flex-direction: column;
@@ -316,6 +341,12 @@
   text-align: center;
   border-radius: var(--radio-borde);
   padding: var(--espacio-lg) var(--espacio-md);
+}
+
+.cta-destacado > p {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-destacado h2 { color: var(--color-champan); }
@@ -379,10 +410,15 @@
 
 /* ---------- Notas de cuidado / límites (Línea B, protocolo de crisis) ---------- */
 .nota-cuidado {
-  background-color: var(--color-rosa-palido);
-  border-left: 3px solid var(--color-oro);
-  padding: var(--espacio-sm) var(--espacio-md);
-  font-size: var(--tamano-pequeno);
-  color: var(--color-ciruela-suave);
-  margin-top: var(--espacio-sm);
+  /* Blanco, no rosa-palido: este bloque aparece dentro de secciones con AMBOS
+     fondos de marca (champán y rosa) — necesita contrastar contra los dos a
+     la vez, igual que las tarjetas de servicio (misma excepción documentada
+     en DESIGN.md). Con rosa-palido se volvía invisible en 4 de sus 5 usos. */
+  background-color: var(--color-blanco);
+  border: 1px solid rgba(62, 45, 92, 0.12);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-md);
+  font-size: var(--tamano-cuerpo);
+  color: var(--color-ciruela);
+  margin-top: var(--espacio-md);
 }
