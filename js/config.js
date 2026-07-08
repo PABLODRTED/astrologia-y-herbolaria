@@ -11,7 +11,7 @@
 window.SITE_CONFIG = {
   // Formato internacional, SIN "+" y SIN espacios.
   // Ejemplo: si tu número es +56 9 1234 5678, escribe "56912345678"
-  whatsapp: "56900000000", // ⚠️ PLACEHOLDER — reemplaza por tu número real
+  whatsapp: "56976229115",
 
   instagram: "https://instagram.com/tu_usuario", // ⚠️ PLACEHOLDER
 

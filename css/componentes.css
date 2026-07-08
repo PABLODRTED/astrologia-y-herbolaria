@@ -211,6 +211,16 @@
   gap: var(--espacio-xs);
 }
 
+.tarjeta__etiqueta {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-oro);
+  margin-bottom: calc(-1 * var(--espacio-xs) / 2);
+}
+
 .tarjeta__precio {
   font-family: var(--fuente-titulos);
   font-size: 1.4rem;
@@ -274,6 +284,12 @@
   text-align: center;
 }
 
+.newsletter > p {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .newsletter__formulario {
   display: flex;
   flex-direction: column;
@@ -316,6 +332,12 @@
   text-align: center;
   border-radius: var(--radio-borde);
   padding: var(--espacio-lg) var(--espacio-md);
+}
+
+.cta-destacado > p {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-destacado h2 { color: var(--color-champan); }
@@ -380,9 +402,9 @@
 /* ---------- Notas de cuidado / límites (Línea B, protocolo de crisis) ---------- */
 .nota-cuidado {
   background-color: var(--color-rosa-palido);
-  border-left: 3px solid var(--color-oro);
-  padding: var(--espacio-sm) var(--espacio-md);
-  font-size: var(--tamano-pequeno);
-  color: var(--color-ciruela-suave);
-  margin-top: var(--espacio-sm);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-md);
+  font-size: var(--tamano-cuerpo);
+  color: var(--color-ciruela);
+  margin-top: var(--espacio-md);
 }

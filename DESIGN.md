@@ -13,7 +13,7 @@ typography:
     fontFamily: "Cormorant Garamond, Georgia, serif"
     fontSize: "clamp(2.25rem, 5vw, 3.25rem)"
     fontWeight: 500
-    lineHeight: 1.2
+    lineHeight: 1.3
     letterSpacing: "normal"
   body:
     fontFamily: "Mulish, -apple-system, sans-serif"
@@ -106,9 +106,9 @@ Paleta cálida y contenida: dos neutros cálidos que se alternan como fondo, un 
 **Character:** El contraste serif/sans es la voz tipográfica del sistema — Cormorant Garamond aporta el peso simbólico y ceremonial en los títulos, Mulish aporta la claridad legible y contemporánea en el cuerpo. Ninguno de los dos se usa fuera de su rol.
 
 ### Hierarchy
-- **Display / H1** (weight 500, clamp(2.25rem, 5vw, 3.25rem), line-height 1.2): título de hero y encabezados de página.
-- **Headline / H2** (weight 500, 1.75rem → 2.25rem en desktop, line-height 1.2): encabezados de sección.
-- **Title / H3** (weight 500, 1.35rem → 1.6rem en desktop, line-height 1.2): subsecciones, nombres de servicio.
+- **Display / H1** (weight 500, clamp(2.25rem, 5vw, 3.25rem), line-height 1.3): título de hero y encabezados de página.
+- **Headline / H2** (weight 500, 1.75rem → 2.25rem en desktop, line-height 1.3): encabezados de sección.
+- **Title / H3** (weight 500, 1.35rem → 1.6rem en desktop, line-height 1.3): subsecciones, nombres de servicio.
 - **Body** (weight 400, 1.0625rem → 1.125rem en desktop, line-height 1.65, max 68ch en artículos de blog): texto de cuerpo general.
 - **Label** (weight 500, 0.65rem, letter-spacing 0.12em, uppercase): subtítulo del logo en el header, texto de apoyo puntual.
 
@@ -149,7 +149,7 @@ El sistema es **plano por capas de color**: no hay sombras en ningún componente
 Bloque de fondo ciruela sólido con texto champán — la única superficie del sitio donde el fondo estructural (ciruela) se vuelve fondo de sección en vez de color de texto. Se reserva para el llamado a agendar hora, el momento de mayor intención de conversión de la página.
 
 ### Nota de Cuidado (signature component)
-Callout de fondo rosa pálido con borde izquierdo de 3px en oro, usado para límites/protocolo de crisis. *(Nota: este es el único uso de un borde lateral de acento en todo el sistema — se revisará en el próximo `/impeccable audit`, ya que el resto del sistema evita bordes laterales como acento.)*
+Bloque de fondo rosa pálido a tamaño de cuerpo completo (sin borde lateral), usado para límites/protocolo de crisis — el momento de mayor peso emocional del sitio, con la presencia visual que corresponde a sus implicancias. Corregido en la auditoría `/impeccable critique` del 2026-07-08: usaba un borde izquierdo de 3px en oro, la única violación de la Regla del Oro Escaso/borde-lateral en todo el sistema; ahora resuelto con el mismo tratamiento de fondo pleno que el resto de los callouts.
 
 ## 6. Do's and Don'ts
 
@@ -164,5 +164,5 @@ Callout de fondo rosa pálido con borde izquierdo de 3px en oro, usado para lím
 - **Don't** usar marcos dorados decorativos, degradados celestes, ni copy Lorem-ipsum de plantilla — la referencia "Mystical Universe / gold frames" es explícitamente lo que este sistema NO es.
 - **Don't** introducir sombras (`box-shadow`) en ningún componente — la profundidad es por capas de color, no por elevación.
 - **Don't** dejar que el tono "ritual wellness" se vuelva genérico *new-age* — el copy del sitio insiste en rigor histórico; el lenguaje ceremonial siempre va acompañado de contexto concreto.
-- **Don't** usar `border-left`/`border-right` mayor a 1px como acento decorativo en tarjetas o callouts nuevos (el único caso existente, `.nota-cuidado`, queda marcado para revisión, no como precedente a repetir).
+- **Don't** usar `border-left`/`border-right` mayor a 1px como acento decorativo en tarjetas o callouts — cero excepciones en el sistema desde la corrección de `.nota-cuidado`.
 - **Don't** mezclar Cormorant Garamond y Mulish dentro del mismo elemento de texto.

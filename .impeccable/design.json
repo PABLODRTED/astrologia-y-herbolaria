@@ -125,7 +125,7 @@
       "Don't usar marcos dorados decorativos, degradados celestes, ni copy Lorem-ipsum de plantilla",
       "Don't introducir sombras en ningún componente",
       "Don't dejar que el tono ritual wellness se vuelva genérico new-age",
-      "Don't usar border-left/border-right mayor a 1px como acento decorativo en componentes nuevos",
+      "Don't usar border-left/border-right mayor a 1px como acento decorativo — cero excepciones desde la corrección de .nota-cuidado",
       "Don't mezclar Cormorant Garamond y Mulish dentro del mismo elemento de texto"
     ]
   }
