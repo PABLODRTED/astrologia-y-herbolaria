@@ -15,5 +15,28 @@ window.SITE_CONFIG = {
 
   instagram: "https://www.instagram.com/astrologiayherbolaria",
 
-  email: "hola@tudominio.cl", // ⚠️ PLACEHOLDER
+  email: "franciscaginer@gmail.com",
 };
+
+// Aviso en consola si alguno de los 3 datos de arriba vuelve a quedar
+// como placeholder (por ejemplo, tras copiar este archivo a un sitio
+// nuevo): evita que un CTA de "Agendar hora" apunte a la nada en silencio.
+(function avisarSiHayPlaceholders() {
+  const config = window.SITE_CONFIG;
+  const advertencias = [];
+  if (!config.whatsapp || config.whatsapp === "56900000000") {
+    advertencias.push("whatsapp");
+  }
+  if (!config.instagram || config.instagram.includes("tu_usuario")) {
+    advertencias.push("instagram");
+  }
+  if (!config.email || config.email.includes("tudominio.cl")) {
+    advertencias.push("email");
+  }
+  if (advertencias.length > 0) {
+    console.warn(
+      `⚠️ js/config.js: falta configurar ${advertencias.join(", ")}. ` +
+      "Los botones de contacto no funcionarán hasta reemplazar estos valores."
+    );
+  }
+})();
