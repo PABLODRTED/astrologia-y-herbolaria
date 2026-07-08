@@ -67,6 +67,12 @@ a:hover, a:focus-visible {
   padding: 0 var(--espacio-sm);
 }
 
+/* Utilidad para párrafos sueltos que necesitan un ancho de lectura cómodo
+   fuera de .articulo (que ya trae su propio max-width) */
+.parrafo-ancho {
+  max-width: 65ch;
+}
+
 .seccion {
   padding: var(--espacio-lg) 0;
 }

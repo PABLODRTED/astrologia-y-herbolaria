@@ -5,7 +5,7 @@
 /* ---------- Header / navegación ---------- */
 .encabezado {
   background-color: var(--color-champan);
-  border-bottom: 1px solid rgba(62, 45, 92, 0.15);
+  border-bottom: 1px solid var(--borde-ciruela-medio);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -49,6 +49,8 @@
   text-decoration: none;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
+  display: inline-block;
+  padding: 0.6rem 0;
 }
 
 .nav a.activo {
@@ -61,7 +63,7 @@
   background: none;
   border: 1px solid var(--color-ciruela);
   border-radius: var(--radio-borde);
-  padding: 0.4rem 0.6rem;
+  padding: 0.65rem 0.8rem; /* alto real ~44px: objetivo táctil mínimo en móvil */
   color: var(--color-ciruela);
   font-family: var(--fuente-cuerpo);
   font-size: 0.9rem;
@@ -76,7 +78,7 @@
   left: 0;
   right: 0;
   background-color: var(--color-champan);
-  border-bottom: 1px solid rgba(62, 45, 92, 0.15);
+  border-bottom: 1px solid var(--borde-ciruela-medio);
   padding: var(--espacio-sm) var(--espacio-sm) var(--espacio-md);
   gap: var(--espacio-sm);
 }
@@ -201,6 +203,10 @@
   grid-template-columns: 1fr;
 }
 
+.grilla--separada {
+  margin-top: var(--espacio-md);
+}
+
 @media (min-width: 640px) {
   .grilla--2 { grid-template-columns: repeat(2, 1fr); }
 }
@@ -212,7 +218,7 @@
 /* ---------- Tarjetas de servicio ---------- */
 .tarjeta {
   background-color: var(--color-blanco);
-  border: 1px solid rgba(62, 45, 92, 0.12);
+  border: 1px solid var(--borde-ciruela-sutil);
   border-radius: var(--radio-borde);
   padding: var(--espacio-md);
   display: flex;
@@ -272,6 +278,11 @@
 .articulo {
   max-width: var(--ancho-lectura);
   margin: 0 auto;
+}
+
+.retrato-sobre-mi {
+  border-radius: var(--radio-borde);
+  margin-bottom: var(--espacio-md);
 }
 
 .articulo p {
@@ -398,7 +409,7 @@
 .pie__legal {
   font-size: 0.8rem;
   opacity: 0.75;
-  border-top: 1px solid rgba(242, 230, 214, 0.2);
+  border-top: 1px solid var(--borde-champan-sutil);
   padding-top: var(--espacio-sm);
   max-width: 70ch;
 }
@@ -415,7 +426,7 @@
      la vez, igual que las tarjetas de servicio (misma excepción documentada
      en DESIGN.md). Con rosa-palido se volvía invisible en 4 de sus 5 usos. */
   background-color: var(--color-blanco);
-  border: 1px solid rgba(62, 45, 92, 0.12);
+  border: 1px solid var(--borde-ciruela-sutil);
   border-radius: var(--radio-borde);
   padding: var(--espacio-md);
   font-size: var(--tamano-cuerpo);
