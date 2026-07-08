@@ -149,7 +149,9 @@ El sistema es **plano por capas de color**: no hay sombras en ningún componente
 Bloque de fondo ciruela sólido con texto champán — la única superficie del sitio donde el fondo estructural (ciruela) se vuelve fondo de sección en vez de color de texto. Se reserva para el llamado a agendar hora, el momento de mayor intención de conversión de la página.
 
 ### Nota de Cuidado (signature component)
-Bloque de fondo rosa pálido a tamaño de cuerpo completo (sin borde lateral), usado para límites/protocolo de crisis — el momento de mayor peso emocional del sitio, con la presencia visual que corresponde a sus implicancias. Corregido en la auditoría `/impeccable critique` del 2026-07-08: usaba un borde izquierdo de 3px en oro, la única violación de la Regla del Oro Escaso/borde-lateral en todo el sistema; ahora resuelto con el mismo tratamiento de fondo pleno que el resto de los callouts.
+Bloque de fondo blanco (no rosa pálido — ver nota abajo) a tamaño de cuerpo completo, con borde fino, usado para límites/protocolo de crisis: el momento de mayor peso emocional del sitio. Aparece dentro de secciones con ambos fondos de marca (champán y rosa), así que necesita la misma excepción de blanco ya otorgada a las tarjetas de servicio para contrastar contra los dos a la vez.
+
+Historial de correcciones (auditoría `/impeccable critique`, 2026-07-08): (1) usaba un borde izquierdo de 3px en oro, la única violación de la Regla del Oro Escaso/borde-lateral del sistema — resuelto con fondo pleno; (2) ese primer fix usó rosa-palido como fondo, que lo volvía invisible en 4 de sus 5 apariciones (blend con el `fondo-rosa` de la sección que lo envuelve) — resuelto pasando a blanco + borde fino.
 
 ## 6. Do's and Don'ts
 
