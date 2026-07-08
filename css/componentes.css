@@ -217,7 +217,7 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-oro);
+  color: var(--color-ciruela);
   margin-bottom: calc(-1 * var(--espacio-xs) / 2);
 }
 
