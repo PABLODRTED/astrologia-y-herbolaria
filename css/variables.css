@@ -42,4 +42,9 @@
   --radio-borde: 4px;
   --ancho-contenido: 1100px;
   --ancho-lectura: 68ch; /* ancho ideal para artículos de blog */
+
+  /* --- Bordes sutiles (tintes de los colores de marca, no colores nuevos) --- */
+  --borde-ciruela-sutil: rgba(62, 45, 92, 0.12);
+  --borde-ciruela-medio: rgba(62, 45, 92, 0.15);
+  --borde-champan-sutil: rgba(242, 230, 214, 0.2);
 }
