@@ -13,7 +13,7 @@ window.SITE_CONFIG = {
   // Ejemplo: si tu número es +56 9 1234 5678, escribe "56912345678"
   whatsapp: "56976229115",
 
-  instagram: "https://instagram.com/tu_usuario", // ⚠️ PLACEHOLDER
+  instagram: "https://www.instagram.com/astrologiayherbolaria",
 
   email: "hola@tudominio.cl", // ⚠️ PLACEHOLDER
 };
