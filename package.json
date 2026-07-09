@@ -5,12 +5,18 @@
   "description": "Sitio web estático (HTML + CSS + JS, sin frameworks) para la marca Astrología y Herbolaria. Incluye funciones serverless (Vercel) para el newsletter personalizado 'El cielo del mes' — el resto del sitio sigue siendo HTML/CSS/JS puro, sin build.",
   "type": "commonjs",
   "scripts": {
-    "dev": "serve"
+    "dev": "serve",
+    "ai-gateway": "tsx index.ts"
   },
   "dependencies": {
-    "circular-natal-horoscope-js": "^1.1.0"
+    "ai": "^7.0.19",
+    "circular-natal-horoscope-js": "^1.1.0",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   }
 }
