@@ -1,10 +1,20 @@
 # 🚀 Install skills-audit skill - One-Command Installer
 # Usage in Claude Code:
+#   powershell -ExecutionPolicy RemoteSigned -File install-skills-audit.ps1
+#   OR (if RemoteSigned fails):
 #   powershell -ExecutionPolicy Bypass -File install-skills-audit.ps1
+#
+# SECURITY NOTE: ExecutionPolicy Bypass disables script signing requirements.
+# Only run this script from trusted sources (official repository).
+# RemoteSigned is safer — it allows locally-created scripts but blocks internet downloads without signing.
 
 Write-Host "╔════════════════════════════════════════╗" -ForegroundColor Cyan
 Write-Host "║  Installing skills-audit skill         ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════╝" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "⚠️  Security Notice:" -ForegroundColor Yellow
+Write-Host "   This script downloads files from GitHub." -ForegroundColor Gray
+Write-Host "   Only run this from official sources." -ForegroundColor Gray
 Write-Host ""
 
 # GitHub repository details

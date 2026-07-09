@@ -16,7 +16,7 @@
     {
       "name": "node-http-server",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["-e", "require('http').createServer((q,s) => require('fs').createReadStream(require('path').join(__dirname, decodeURI(q.url==='/'?'/index.html':q.url))).pipe(s)).listen(3001)"],
+      "runtimeArgs": ["-e", "const path = require('path'), fs = require('fs'), http = require('http'); http.createServer((q,s) => { try { const url = new URL(q.url, `http://${q.headers.host}`).pathname; const normalized = path.normalize(decodeURI(url)).replace(/\\\\/g, '/'); if (normalized.startsWith('..') || !normalized.startsWith('/')) { s.writeHead(403); s.end('Forbidden'); return; } const file = path.join(__dirname, normalized === '/' ? '/index.html' : normalized); const rel = path.relative(__dirname, file); if (rel.startsWith('..')) { s.writeHead(403); s.end('Forbidden'); return; } fs.createReadStream(file).on('error', () => { s.writeHead(404); s.end('Not Found'); }).pipe(s); } catch (e) { s.writeHead(400); s.end('Bad Request'); } }).listen(3001)"],
       "port": 3001
     }
   ]
