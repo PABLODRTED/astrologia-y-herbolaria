@@ -1,0 +1,4 @@
+# AI Gateway local development files (not for deployment)
+index.ts
+.env.local
+tsconfig.json
