@@ -1,0 +1,9 @@
+{
+  "name": "astrologia-y-herbolaria",
+  "private": true,
+  "description": "Funciones serverless (Vercel) para el newsletter personalizado 'El cielo del mes'. El resto del sitio sigue siendo HTML/CSS/JS estático puro, sin build.",
+  "type": "commonjs",
+  "dependencies": {
+    "circular-natal-horoscope-js": "^1.1.0"
+  }
+}
