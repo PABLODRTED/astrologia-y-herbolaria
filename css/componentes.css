@@ -378,8 +378,14 @@
 
 .newsletter__campo--fila {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--espacio-xs);
+}
+
+@media (min-width: 480px) {
+  .newsletter__campo--fila {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .newsletter__ayuda {

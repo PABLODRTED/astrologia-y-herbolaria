@@ -9,25 +9,38 @@
    partials/footer.html, que se inyectan por fetch).
    ============================================================ */
 
-let ciudadesCache = null;
+let ciudadesPromesa = null;
 
-async function obtenerCiudades() {
-  if (ciudadesCache) return ciudadesCache;
-  const respuesta = await fetch('/data/ciudades-chile.json');
-  const datos = await respuesta.json();
-  ciudadesCache = datos.ciudades;
-  return ciudadesCache;
+function obtenerCiudades() {
+  if (!ciudadesPromesa) {
+    ciudadesPromesa = fetch('/data/ciudades-chile.json')
+      .then((respuesta) => {
+        if (!respuesta.ok) throw new Error(`No se pudo cargar la lista de ciudades (${respuesta.status})`);
+        return respuesta.json();
+      })
+      .then((datos) => datos.ciudades);
+  }
+  return ciudadesPromesa;
 }
 
-async function llenarSelectCiudades(select) {
-  const ciudades = await obtenerCiudades();
-  const otraOpcion = select.querySelector('option[value="__otra__"]');
-  ciudades.forEach((ciudad) => {
-    const opcion = document.createElement('option');
-    opcion.value = ciudad.nombre;
-    opcion.textContent = ciudad.nombre;
-    select.insertBefore(opcion, otraOpcion);
-  });
+async function llenarSelectCiudades(select, form) {
+  try {
+    const ciudades = await obtenerCiudades();
+    const otraOpcion = select.querySelector('option[value="__otra__"]');
+    ciudades.forEach((ciudad) => {
+      const opcion = document.createElement('option');
+      opcion.value = ciudad.nombre;
+      opcion.textContent = ciudad.nombre;
+      select.insertBefore(opcion, otraOpcion);
+    });
+  } catch (error) {
+    console.error('Error cargando ciudades:', error);
+    // Si la lista no cargó, dejamos "Otra ciudad" como única opción usable
+    // en vez de un select roto sin explicación.
+    select.value = '__otra__';
+    select.dispatchEvent(new Event('change'));
+    mostrarMensaje(form, 'No pudimos cargar la lista de ciudades — escribe tu ciudad de nacimiento a mano.', 'error');
+  }
 }
 
 function manejarCambioCiudad(form) {
@@ -69,7 +82,10 @@ async function manejarEnvio(form, evento) {
       throw new Error(resultado.error || 'No se pudo completar la suscripción.');
     }
 
-    mostrarMensaje(form, '¡Gracias! Revisa tu correo para confirmar la suscripción.', 'ok');
+    const mensaje = resultado.cartaNatalFallo
+      ? '¡Gracias! Quedaste suscrita — tuvimos un problema calculando tu carta natal, lo revisamos antes del próximo envío.'
+      : '¡Gracias! Revisa tu correo para confirmar la suscripción.';
+    mostrarMensaje(form, mensaje, 'ok');
     form.reset();
   } catch (error) {
     mostrarMensaje(form, error.message || 'Algo falló. Intenta de nuevo en unos minutos.', 'error');
@@ -85,7 +101,7 @@ window.inicializarFormulariosNewsletter = function inicializarFormulariosNewslet
 
     const select = form.querySelector('select[name="lugar_nacimiento"]');
     if (select) {
-      llenarSelectCiudades(select);
+      llenarSelectCiudades(select, form);
       manejarCambioCiudad(form);
     }
 

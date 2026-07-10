@@ -1,5 +1,5 @@
 {
-  "_nota": "Tabla estática de ciudades/comunas chilenas con lat/long, usada para calcular el ascendente natal sin depender de una API de geocodificación externa. 'timezone' es el nombre IANA (la librería de efemérides calcula el offset histórico real, incluyendo horario de verano, a partir de este nombre + la fecha de nacimiento).",
+  "_nota": "Tabla estática de ciudades/comunas chilenas con lat/long, usada para calcular el ascendente natal sin depender de una API de geocodificación externa. 'timezone' es el nombre IANA de referencia — actualmente NO se pasa a la librería de efemérides (lib/ephemeris.js solo usa lat/lon); el offset horario/horario de verano queda inferido internamente por la librería a partir de esas coordenadas. Punta Arenas e Isla de Pascua llevan un timezone distinto porque se apartan del huso horario continental — si en el futuro se detectan ascendentes incorrectos para esas ciudades, este es el primer lugar a revisar.",
   "ciudades": [
     { "nombre": "Santiago", "lat": -33.4489, "lon": -70.6693, "timezone": "America/Santiago" },
     { "nombre": "Valparaíso", "lat": -33.0472, "lon": -71.6127, "timezone": "America/Santiago" },
