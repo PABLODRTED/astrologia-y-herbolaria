@@ -345,6 +345,75 @@
   margin-left: 0;
 }
 
+/* ---------- Formulario de nacimiento (dentro de .newsletter__formulario) ---------- */
+.newsletter__formulario--nacimiento {
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  gap: var(--espacio-xs);
+}
+
+.newsletter__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.newsletter__campo label {
+  font-size: var(--tamano-pequeno);
+  color: var(--color-ciruela-suave);
+}
+
+.newsletter__campo input,
+.newsletter__campo select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-ciruela);
+  border-radius: var(--radio-borde);
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  background-color: var(--color-blanco);
+  color: var(--color-ciruela);
+}
+
+.newsletter__campo--fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-xs);
+}
+
+.newsletter__ayuda {
+  font-size: var(--tamano-pequeno);
+  color: var(--color-ciruela-suave);
+  margin: 0;
+}
+
+.newsletter__consentimiento {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: var(--tamano-pequeno);
+  margin-top: var(--espacio-xs);
+}
+
+.newsletter__consentimiento input[type="checkbox"] {
+  margin-top: 0.2rem;
+  accent-color: var(--color-ciruela);
+}
+
+.newsletter__mensaje {
+  font-size: var(--tamano-pequeno);
+  margin: var(--espacio-xs) 0 0;
+}
+
+.newsletter__mensaje[data-estado="error"] {
+  color: #A23B3B;
+}
+
+.newsletter__mensaje[data-estado="ok"] {
+  color: var(--color-ciruela);
+}
+
 /* ---------- CTA destacado (agendar hora) ---------- */
 .cta-destacado {
   background-color: var(--color-ciruela);

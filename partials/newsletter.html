@@ -9,16 +9,51 @@
   </svg>
   <h2>El cielo del mes</h2>
   <p>
-    Una nota breve, una vez al mes: un gesto de lectura sobre los ciclos que estamos habitando, sin promesas
-    ni pronósticos. Para quien quiera sostener la práctica entre una sesión y otra.
+    Una nota breve, una vez al mes: una lectura personal que cruza tu ascendente y tu luna natal con la luna
+    llena del mes. Para quien quiera sostener la práctica entre una sesión y otra.
   </p>
 
-  <!-- Placeholder de formulario embebido. Cuando definas tu proveedor
-       (por ejemplo MailerLite), reemplaza este <form> por el código de
-       embed que ellos te entreguen — no hace falta tocar nada más del sitio. -->
-  <form class="newsletter__formulario" aria-label="Suscribirse a El cielo del mes">
-    <label class="solo-lector" for="correo-newsletter-home">Tu correo electrónico</label>
-    <input type="email" id="correo-newsletter-home" placeholder="tu@correo.com" required>
+  <form class="newsletter__formulario newsletter__formulario--nacimiento" data-form-newsletter aria-label="Suscribirse a El cielo del mes">
+    <div class="newsletter__campo">
+      <label for="correo-newsletter-home">Tu correo electrónico</label>
+      <input type="email" id="correo-newsletter-home" name="email" placeholder="tu@correo.com" required>
+    </div>
+
+    <div class="newsletter__campo--fila">
+      <div class="newsletter__campo">
+        <label for="fecha-nacimiento-home">Fecha de nacimiento</label>
+        <input type="date" id="fecha-nacimiento-home" name="fecha_nacimiento" required>
+      </div>
+      <div class="newsletter__campo">
+        <label for="hora-nacimiento-home">Hora de nacimiento</label>
+        <input type="time" id="hora-nacimiento-home" name="hora_nacimiento">
+      </div>
+    </div>
+    <p class="newsletter__ayuda">
+      Si no sabes tu hora exacta, déjala en blanco — igual podemos leer tu luna natal, aunque no tu ascendente.
+    </p>
+
+    <div class="newsletter__campo">
+      <label for="lugar-nacimiento-home">Ciudad de nacimiento</label>
+      <select id="lugar-nacimiento-home" name="lugar_nacimiento" required>
+        <option value="">Selecciona una ciudad…</option>
+        <option value="__otra__">Otra ciudad…</option>
+      </select>
+    </div>
+    <div class="newsletter__campo" data-campo-otra-ciudad hidden>
+      <label for="otra-ciudad-home">Nombre de tu ciudad</label>
+      <input type="text" id="otra-ciudad-home" name="otra_ciudad" placeholder="Ciudad, país">
+    </div>
+
+    <label class="newsletter__consentimiento" for="consentimiento-home">
+      <input type="checkbox" id="consentimiento-home" name="consentimiento" required>
+      <span>
+        Acepto que estos datos se usen para calcular mi carta natal y recibir El cielo del mes. Ver
+        <a href="/privacidad.html">política de privacidad</a>.
+      </span>
+    </label>
+
     <button type="submit" class="boton boton--primario">Suscribirme</button>
+    <p class="newsletter__mensaje" data-mensaje-newsletter role="status" aria-live="polite"></p>
   </form>
 </section>
