@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     activarRedesYCorreo();
     activarMenuMovil();
     completarAnioActual();
+    if (window.inicializarFormulariosNewsletter) {
+      window.inicializarFormulariosNewsletter();
+    }
   });
 });
 

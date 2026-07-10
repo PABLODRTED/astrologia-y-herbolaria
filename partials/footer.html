@@ -30,14 +30,47 @@
       <div>
         <h3>El cielo del mes</h3>
         <div class="newsletter newsletter--compacto">
-          <p>Una nota breve al mes sobre ciclos, imágenes y correspondencias. Sin spam, puedes darte de baja cuando quieras.</p>
-          <!-- Placeholder de formulario embebido. Reemplaza este <form> por el
-               código de embed que te entregue tu proveedor (ej. MailerLite)
-               cuando lo definas. Mientras tanto, este formulario no envía datos. -->
-          <form class="newsletter__formulario" aria-label="Suscribirse a El cielo del mes">
-            <label class="solo-lector" for="correo-newsletter-pie">Tu correo electrónico</label>
-            <input type="email" id="correo-newsletter-pie" placeholder="tu@correo.com" required>
+          <p>Una lectura personal al mes, cruzando tu carta natal con el cielo. Sin spam, puedes darte de baja cuando quieras.</p>
+          <form class="newsletter__formulario newsletter__formulario--nacimiento" data-form-newsletter aria-label="Suscribirse a El cielo del mes">
+            <div class="newsletter__campo">
+              <label for="correo-newsletter-pie">Tu correo electrónico</label>
+              <input type="email" id="correo-newsletter-pie" name="email" placeholder="tu@correo.com" required>
+            </div>
+
+            <div class="newsletter__campo--fila">
+              <div class="newsletter__campo">
+                <label for="fecha-nacimiento-pie">Fecha de nacimiento</label>
+                <input type="date" id="fecha-nacimiento-pie" name="fecha_nacimiento" required>
+              </div>
+              <div class="newsletter__campo">
+                <label for="hora-nacimiento-pie">Hora de nacimiento</label>
+                <input type="time" id="hora-nacimiento-pie" name="hora_nacimiento">
+              </div>
+            </div>
+            <p class="newsletter__ayuda">Si no sabes tu hora exacta, déjala en blanco.</p>
+
+            <div class="newsletter__campo">
+              <label for="lugar-nacimiento-pie">Ciudad de nacimiento</label>
+              <select id="lugar-nacimiento-pie" name="lugar_nacimiento" required>
+                <option value="">Selecciona una ciudad…</option>
+                <option value="__otra__">Otra ciudad…</option>
+              </select>
+            </div>
+            <div class="newsletter__campo" data-campo-otra-ciudad hidden>
+              <label for="otra-ciudad-pie">Nombre de tu ciudad</label>
+              <input type="text" id="otra-ciudad-pie" name="otra_ciudad" placeholder="Ciudad, país">
+            </div>
+
+            <label class="newsletter__consentimiento" for="consentimiento-pie">
+              <input type="checkbox" id="consentimiento-pie" name="consentimiento" required>
+              <span>
+                Acepto el uso de estos datos para mi carta natal. Ver
+                <a href="/privacidad.html">política de privacidad</a>.
+              </span>
+            </label>
+
             <button type="submit" class="boton boton--secundario">Suscribirme</button>
+            <p class="newsletter__mensaje" data-mensaje-newsletter role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
