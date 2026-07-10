@@ -324,8 +324,9 @@
   }
 }
 
-.newsletter__formulario input[type="email"] {
-  flex: 1;
+.newsletter__formulario input[type="email"],
+.newsletter__campo input,
+.newsletter__campo select {
   padding: 0.75rem 1rem;
   border: 1px solid var(--color-ciruela);
   border-radius: var(--radio-borde);
@@ -333,6 +334,10 @@
   font-size: 1rem;
   background-color: var(--color-blanco);
   color: var(--color-ciruela);
+}
+
+.newsletter__formulario input[type="email"] {
+  flex: 1;
 }
 
 .newsletter--compacto {
@@ -363,17 +368,6 @@
 .newsletter__campo label {
   font-size: var(--tamano-pequeno);
   color: var(--color-ciruela-suave);
-}
-
-.newsletter__campo input,
-.newsletter__campo select {
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--color-ciruela);
-  border-radius: var(--radio-borde);
-  font-family: var(--fuente-cuerpo);
-  font-size: 1rem;
-  background-color: var(--color-blanco);
-  color: var(--color-ciruela);
 }
 
 .newsletter__campo--fila {
