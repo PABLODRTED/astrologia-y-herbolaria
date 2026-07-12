@@ -113,7 +113,49 @@ Aún no tienes uno — puedes publicar el sitio en la URL gratuita de Vercel
 
 ---
 
-## 5. Si necesitas ayuda para editar textos más adelante
+## 5. AI Gateway — Generación de texto con IA (desarrollo local)
+
+El proyecto incluye configuración para usar **Vercel AI Gateway** con el SDK de `ai` para generar
+texto mediante IA. Esto es útil si quieres crear características como:
+- Respuestas personalizadas basadas en datos del usuario
+- Análisis automático de consultas
+- Generación de contenido dinámico
+
+### Configuración local
+
+1. **Obtén tu API key de Vercel:**
+   - Ve a https://console.vercel.com/account/settings/tokens
+   - Copia tu token de acceso
+
+2. **Crea tu archivo `.env.local`:**
+   ```bash
+   # Copia el archivo de ejemplo
+   cp .env.local.example .env.local
+   
+   # Abre .env.local y reemplaza la clave placeholder con tu API key
+   # No subas este archivo a GitHub (ya está en .gitignore)
+   ```
+
+3. **Ejecuta el ejemplo:**
+   ```bash
+   npm run ai-gateway
+   ```
+   
+   Verás la respuesta de IA en la terminal junto con el conteo de tokens (útil para monitorear costos).
+
+### Detalles técnicos
+
+- **Lenguaje:** TypeScript (archivo `index.ts`)
+- **Modelo:** OpenAI GPT-4 Turbo (configurable en `index.ts`)
+- **Streaming:** La respuesta se recibe en tiempo real, palabra por palabra
+- **Token tracking:** Se registran tokens de entrada, salida y total para cálculo de costos
+
+Para entender más sobre cómo funciona, abre `index.ts` en tu editor — el código es legible y
+está comentado.
+
+---
+
+## 6. Si necesitas ayuda para editar textos más adelante
 
 Puedes pedirle a Claude Code (o a cualquier persona con conocimientos básicos de HTML) que edite
 directamente el archivo `.html` de la página correspondiente. Como el texto está separado del diseño
