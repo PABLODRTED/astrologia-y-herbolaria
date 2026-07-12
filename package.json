@@ -2,7 +2,7 @@
   "name": "astrologia-y-herbolaria",
   "version": "1.0.0",
   "private": true,
-  "description": "Sitio web de la marca Astrología y Herbolaria (Next.js + React + Tailwind).",
+  "description": "Sitio web de la marca Astrología y Herbolaria (Next.js + React + Tailwind), con una función serverless para el newsletter personalizado 'El cielo del mes'.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
+    "circular-natal-horoscope-js": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.24.0",

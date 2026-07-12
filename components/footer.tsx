@@ -1,4 +1,5 @@
 import { buildWhatsappLink, siteConfig } from "@/lib/site-config";
+import { NewsletterForm } from "@/components/newsletter-form";
 
 export function Footer() {
   const anioActual = new Date().getFullYear();
@@ -38,27 +39,10 @@ export function Footer() {
             <h3 className="text-champan text-[1.1rem]">El cielo del mes</h3>
             <div className="mt-sm text-left">
               <p>
-                Una nota breve al mes sobre ciclos, imágenes y correspondencias. Sin spam, puedes darte de baja
+                Una lectura personal al mes, cruzando tu carta natal con el cielo. Sin spam, puedes darte de baja
                 cuando quieras.
               </p>
-              <form aria-label="Suscribirse a El cielo del mes" className="ml-0 mt-sm flex max-w-[420px] flex-col gap-xs min-[480px]:flex-row">
-                <label className="solo-lector" htmlFor="correo-newsletter-pie">
-                  Tu correo electrónico
-                </label>
-                <input
-                  type="email"
-                  id="correo-newsletter-pie"
-                  placeholder="tu@correo.com"
-                  required
-                  className="flex-1 rounded-borde border border-ciruela bg-blanco px-[1rem] py-[0.75rem] font-cuerpo text-base text-ciruela"
-                />
-                <button
-                  type="submit"
-                  className="inline-block rounded-borde border border-champan bg-transparent px-[1.6rem] py-[0.85rem] font-cuerpo text-[0.95rem] font-semibold text-champan transition-colors hover:border-oro hover:text-oro focus-visible:border-oro focus-visible:text-oro"
-                >
-                  Suscribirme
-                </button>
-              </form>
+              <NewsletterForm variant="footer" />
             </div>
           </div>
         </div>
