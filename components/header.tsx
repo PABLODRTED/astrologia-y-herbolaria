@@ -8,9 +8,9 @@ import { buildWhatsappLink } from "@/lib/site-config";
 
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
-  { href: "/legacy/servicios.html", label: "Servicios" },
-  { href: "/legacy/sobre-mi.html", label: "Sobre mí" },
-  { href: "/legacy/blog/index.html", label: "Blog" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/sobre-mi", label: "Sobre mí" },
+  { href: "/blog", label: "Blog" },
 ] as const;
 
 export function Header() {

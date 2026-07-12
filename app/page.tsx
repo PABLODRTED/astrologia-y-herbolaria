@@ -32,7 +32,7 @@ export default function Home() {
             Agendar hora
           </a>
           <Link
-            href="/legacy/servicios.html"
+            href="/servicios"
             className="inline-block rounded-borde border border-ciruela px-[1.6rem] py-[0.85rem] font-cuerpo text-[0.95rem] font-semibold text-ciruela no-underline transition-colors hover:border-oro hover:text-oro focus-visible:border-oro focus-visible:text-oro"
           >
             Ver servicios
@@ -52,7 +52,7 @@ export default function Home() {
             siempre en quien consulta.
           </p>
           <Link
-            href="/legacy/sobre-mi.html"
+            href="/sobre-mi"
             className="inline-block rounded-borde border border-ciruela px-[1.6rem] py-[0.85rem] font-cuerpo text-[0.95rem] font-semibold text-ciruela no-underline transition-colors hover:border-oro hover:text-oro focus-visible:border-oro focus-visible:text-oro"
           >
             Conocer más sobre esta práctica
@@ -73,7 +73,7 @@ export default function Home() {
               </p>
               <div className="mt-auto pt-sm">
                 <Link
-                  href="/legacy/servicios.html#linea-a"
+                  href="/servicios#linea-a"
                   className="inline-block rounded-borde border border-ciruela px-[1.6rem] py-[0.85rem] font-cuerpo text-[0.95rem] font-semibold text-ciruela no-underline transition-colors hover:border-oro hover:text-oro focus-visible:border-oro focus-visible:text-oro"
                 >
                   Ver sesiones
@@ -88,7 +88,7 @@ export default function Home() {
               </p>
               <div className="mt-auto pt-sm">
                 <Link
-                  href="/legacy/servicios.html#linea-b"
+                  href="/servicios#linea-b"
                   className="inline-block rounded-borde border border-ciruela px-[1.6rem] py-[0.85rem] font-cuerpo text-[0.95rem] font-semibold text-ciruela no-underline transition-colors hover:border-oro hover:text-oro focus-visible:border-oro focus-visible:text-oro"
                 >
                   Ver práctica ritual

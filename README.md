@@ -1,9 +1,7 @@
 # Astrología y Herbolaria · por Francisca Giner Mellado
 
-Sitio web de la marca **Astrología y Herbolaria**. La home (`/`) está construida con
-**Next.js + React + Tailwind**; el resto de páginas (Servicios, Sobre mí, Blog) todavía viven
-como HTML/CSS/JS estático en `public/legacy/` mientras se migran en una próxima etapa. El
-newsletter "El cielo del mes" es funcional de verdad: envía los datos a MailerLite a través de
+Sitio web de la marca **Astrología y Herbolaria**, construido con **Next.js + React + Tailwind**.
+El newsletter "El cielo del mes" es funcional de verdad: envía los datos a MailerLite a través de
 una función serverless.
 
 ---
@@ -12,23 +10,23 @@ una función serverless.
 
 ```
 astrologia-y-herbolaria/
-├── app/                    → Home (Next.js App Router): page.tsx, layout.tsx, globals.css
-├── components/              → Header, Footer, Newsletter, CtaWhatsapp (React)
-├── lib/                      → site-config.ts, utils.ts, mailerlite.js, ephemeris.js
-├── api/subscribe.js           → función serverless: alta de suscriptoras en MailerLite
-├── data/ciudades-chile.json    → ciudades para el selector "lugar de nacimiento" del newsletter
-├── public/legacy/                → sitio estático original, todavía en producción:
-│   ├── servicios.html              → catálogo de servicios
-│   ├── sobre-mi.html                → página Sobre mí
-│   ├── blog/                         → listado de artículos + cada post
-│   ├── partials/                      → header, footer, newsletter y CTA (HTML compartido)
-│   ├── css/                            → estilos del sitio legacy
-│   └── js/                              → config.js (WhatsApp/Instagram/correo) y lógica del sitio legacy
-└── privacidad.html                        → política de privacidad
+├── app/                       → páginas (Next.js App Router)
+│   ├── page.tsx                 → Inicio
+│   ├── servicios/page.tsx        → Servicios
+│   ├── sobre-mi/page.tsx          → Sobre mí
+│   ├── blog/page.tsx               → listado de artículos
+│   ├── blog/<slug>/page.tsx         → cada artículo del blog
+│   ├── privacidad/page.tsx           → política de privacidad
+│   └── layout.tsx                     → shell compartido (Header, Footer, fuentes)
+├── components/                → Header, Footer, Newsletter, tarjetas, botones, etc. (React)
+├── lib/                        → site-config.ts, utils.ts, mailerlite.js, ephemeris.js
+├── api/subscribe.js             → función serverless: alta de suscriptoras en MailerLite
+├── data/ciudades-chile.json      → ciudades para el selector "lugar de nacimiento" del newsletter
+└── public/img/                    → imágenes (hoy hay placeholders, ver sección 4)
 ```
 
-**Regla simple:** el texto de la home vive en `app/page.tsx` y `components/*.tsx`; el texto del
-resto de páginas (aún no migradas) vive en los archivos `.html` dentro de `public/legacy/`.
+**Regla simple:** el texto de cada página vive directamente en su archivo `page.tsx` dentro de
+`app/`, o en los componentes que usa (`components/*.tsx`).
 
 ---
 
@@ -39,14 +37,7 @@ npm install
 npm run dev
 ```
 
-Abre `http://localhost:3000`. La home usa Next.js con recarga en caliente. Las páginas del sitio
-legacy (Servicios, Sobre mí, Blog) se sirven automáticamente desde `/legacy/...` — por ejemplo
-`http://localhost:3000/legacy/servicios.html`.
-
-Si además quieres previsualizar el sitio legacy de forma aislada (sin Next.js), puedes correr:
-```bash
-npm run legacy
-```
+Abre `http://localhost:3000`. Next.js recarga en caliente al guardar cambios.
 
 ---
 
@@ -75,17 +66,17 @@ paso a paso, incluso si el dominio lo compraste en otro proveedor).
 ## 4. Qué te falta definir (y cómo hacerlo tú misma)
 
 ### a) Número de WhatsApp, Instagram y correo
-Abre `lib/site-config.ts` (para la home) y `public/legacy/js/config.js` (para el resto del sitio) y
-reemplaza los valores de WhatsApp, Instagram y correo.
+Abre `lib/site-config.ts` y reemplaza los valores de WhatsApp, Instagram y correo — se actualizan
+automáticamente en todo el sitio (header, footer y botones de "agendar hora").
 
 ### b) Fotografías reales
-Hoy hay imágenes de referencia (dibujos lineales simples) en `public/legacy/img/`:
+Hoy hay imágenes de referencia (dibujos lineales simples) en `public/img/`:
 - `placeholder-retrato.svg` → foto tuya en Sobre mí
 - `placeholder-blog-*.svg` → imágenes de cada artículo del blog
 
-Para reemplazarlas: agrega tu foto a esa carpeta (ej. `public/legacy/img/francisca-retrato.jpg`) y
-cambia el atributo `src` en `public/legacy/sobre-mi.html` (y lo mismo para las imágenes de blog). No
-olvides escribir una descripción breve en el atributo `alt`.
+Para reemplazarlas: agrega tu foto a esa carpeta (ej. `public/img/francisca-retrato.jpg`) y cambia
+el atributo `src` en `app/sobre-mi/page.tsx` (y lo mismo para las imágenes de blog en
+`app/blog/page.tsx`). No olvides escribir una descripción breve en el atributo `alt`.
 
 ### c) Newsletter — MailerLite
 El formulario de "El cielo del mes" (home y footer) ya está conectado a MailerLite: pide correo,
@@ -100,6 +91,6 @@ Aún no tienes uno — puedes publicar el sitio en la URL gratuita de Vercel
 
 ## 5. Si necesitas ayuda para editar textos más adelante
 
-Puedes pedirle a Claude Code (o a cualquier persona con conocimientos básicos de React/HTML) que
-edite directamente el archivo correspondiente: `app/page.tsx`/`components/*.tsx` para la home, o el
-archivo `.html` correspondiente dentro de `public/legacy/` para el resto de páginas.
+Puedes pedirle a Claude Code (o a cualquier persona con conocimientos básicos de React) que edite
+directamente el archivo `page.tsx` de la página correspondiente dentro de `app/`, o el componente
+que quieras cambiar dentro de `components/`.
