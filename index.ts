@@ -1,5 +1,8 @@
-import 'dotenv/config'
+import dotenv from 'dotenv'
+import path from 'path'
 import { streamText } from 'ai'
+
+dotenv.config({ path: path.resolve('.env.local') })
 
 const apiKey = process.env.AI_GATEWAY_API_KEY
 if (!apiKey) {
