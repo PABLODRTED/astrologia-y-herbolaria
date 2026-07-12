@@ -176,6 +176,16 @@
   }
 }
 
+/* Logo animado en hero */
+.hero__logo-animado {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto var(--espacio-sm);
+  display: block;
+  border-radius: var(--radio-borde);
+}
+
 /* Ícono lineal decorativo (fase lunar / constelación) — trazo fino en oro, uso puntual */
 .icono-simbolico {
   width: 32px;
