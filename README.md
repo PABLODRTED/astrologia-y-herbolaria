@@ -1,8 +1,8 @@
 # Astrología y Herbolaria · por Francisca Giner Mellado
 
-Sitio web estático (HTML + CSS + JS, sin frameworks) para la marca **Astrología y Herbolaria**.
-Este documento explica cómo verlo en tu computador, cómo publicarlo gratis en internet, y qué
-puedes editar tú misma sin ayuda técnica.
+Sitio web de la marca **Astrología y Herbolaria**, construido con **Next.js + React + Tailwind**.
+El newsletter "El cielo del mes" es funcional de verdad: envía los datos a MailerLite a través de
+una función serverless.
 
 ---
 
@@ -10,102 +10,78 @@ puedes editar tú misma sin ayuda técnica.
 
 ```
 astrologia-y-herbolaria/
-├── index.html          → página de Inicio
-├── servicios.html       → catálogo de servicios
-├── sobre-mi.html         → página Sobre mí
-├── blog/
-│   ├── index.html        → listado de artículos
-│   └── *.html             → cada artículo del blog
-├── partials/              → header, footer, newsletter y CTA (se repiten en todas las páginas)
-├── css/                   → estilos (colores, tipografía, componentes)
-├── js/
-│   ├── config.js          → AQUÍ editas tu WhatsApp, Instagram y correo
-│   └── site.js             → lógica del sitio (no es necesario tocarlo)
-└── img/                   → imágenes (hoy hay placeholders, ver sección 4)
+├── app/                       → páginas (Next.js App Router)
+│   ├── page.tsx                 → Inicio
+│   ├── servicios/page.tsx        → Servicios
+│   ├── sobre-mi/page.tsx          → Sobre mí
+│   ├── blog/page.tsx               → listado de artículos
+│   ├── blog/<slug>/page.tsx         → cada artículo del blog
+│   ├── privacidad/page.tsx           → política de privacidad
+│   └── layout.tsx                     → shell compartido (Header, Footer, fuentes)
+├── components/                → Header, Footer, Newsletter, tarjetas, botones, etc. (React)
+├── lib/                        → site-config.ts, utils.ts, mailerlite.js, ephemeris.js
+├── api/subscribe.js             → función serverless: alta de suscriptoras en MailerLite
+├── data/ciudades-chile.json      → ciudades para el selector "lugar de nacimiento" del newsletter
+└── public/img/                    → imágenes (hoy hay placeholders, ver sección 4)
 ```
 
-**Regla simple:** el texto que ves en el sitio vive dentro de los archivos `.html`. Puedes abrir
-cualquiera de ellos con un editor de texto (o pedirle a Claude Code que lo edite por ti) y cambiar
-las palabras entre las etiquetas, sin tocar nada que tenga símbolos como `<` `>` o `class="..."`.
+**Regla simple:** el texto de cada página vive directamente en su archivo `page.tsx` dentro de
+`app/`, o en los componentes que usa (`components/*.tsx`).
 
 ---
 
-## 2. Cómo ver el sitio en tu computador (antes de publicarlo)
+## 2. Cómo ver el sitio en tu computador
 
-Como el sitio carga el header y el footer con JavaScript, **no puedes simplemente hacer doble clic**
-en `index.html` — necesitas un pequeño servidor local. Dos formas simples, elige una:
-
-### Opción A — Extensión "Live Server" de VS Code (más fácil si usas VS Code)
-1. Instala la extensión **Live Server** desde el panel de extensiones de VS Code.
-2. Abre la carpeta `astrologia-y-herbolaria` en VS Code.
-3. Clic derecho sobre `index.html` → **"Open with Live Server"**.
-4. Se abrirá el sitio en tu navegador y se actualiza solo cuando guardas cambios.
-
-### Opción B — Terminal (si tienes Node.js instalado)
 ```bash
-cd astrologia-y-herbolaria
-npx serve
+npm install
+npm run dev
 ```
-Luego abre en tu navegador la dirección que aparezca en la terminal (algo como `http://localhost:3000`).
+
+Abre `http://localhost:3000`. Next.js recarga en caliente al guardar cambios.
 
 ---
 
-## 3. Cómo publicarlo gratis (dominio y hosting)
+## 3. Cómo publicarlo
 
-Recomiendo **Vercel** por ser la opción más simple para alguien sin experiencia técnica: no requiere
-configuración de build, es gratis, y conecta directo con GitHub.
+El proyecto se despliega en **Vercel**: detecta automáticamente que es un proyecto Next.js
+(`npm run build` genera un export estático en `out/`, más la función serverless `api/subscribe.js`
+para el newsletter). Basta con importar el repositorio en Vercel — no hace falta configurar nada
+manualmente.
 
-### Paso a paso
+### Variables de entorno necesarias
 
-1. **Crea una cuenta gratuita en GitHub** (github.com) si no tienes una.
-2. **Sube esta carpeta a un repositorio de GitHub.** La forma más simple:
-   - Entra a github.com → "New repository" → dale un nombre (ej. `astrologia-y-herbolaria`) → Create.
-   - En la página del repositorio recién creado, usa la opción "uploading an existing file" y arrastra
-     todos los archivos y carpetas de este proyecto.
-   - (Si usas Claude Code, también puedes pedirle que haga esto por ti con comandos de `git`.)
-3. **Crea una cuenta gratuita en Vercel** (vercel.com), lo más simple es iniciar sesión con tu
-   cuenta de GitHub.
-4. En el panel de Vercel, ve a **Add New → Project → Import Git Repository**.
-5. Elige el repositorio que subiste. En la configuración del proyecto:
-   - Framework Preset: **Other** (o "No Framework")
-   - Build Command: (déjalo vacío)
-   - Output Directory: `./` (la raíz)
-6. Clic en **Deploy**. En 1-2 minutos tendrás una URL gratuita tipo
-   `astrologia-y-herbolaria.vercel.app` funcionando.
+El newsletter requiere configurar en Vercel (Settings → Environment Variables):
+- `MAILERLITE_API_KEY` — tu clave de API de MailerLite ([dashboard.mailerlite.com/integrations/api](https://dashboard.mailerlite.com/integrations/api))
+- `MAILERLITE_GROUP_ID` — (opcional) el grupo de MailerLite al que agregar las nuevas suscriptoras
 
-### Conectar tu propio dominio (cuando lo tengas)
+Para desarrollo local, copia `.env.local.example` a `.env.local` y completa esos valores.
 
-Una vez que compres un dominio (ej. en NIC Chile para `.cl`, o en cualquier registrador para `.com`):
-1. En el mismo proyecto de Vercel, ve a **Settings → Domains → Add**.
-2. Sigue las instrucciones para apuntar tu dominio (Vercel te guía paso a paso, incluso si el
-   dominio lo compraste en otro proveedor).
+### Conectar tu propio dominio
 
-**Alternativa:** GitHub Pages también es gratuita y funciona bien para este sitio (Settings → Pages →
-elegir la rama `main` como fuente), pero Vercel ofrece mejor rendimiento y una configuración de
-dominio propio más simple para alguien sin experiencia técnica.
+En el proyecto de Vercel: **Settings → Domains → Add**, y sigue las instrucciones (Vercel te guía
+paso a paso, incluso si el dominio lo compraste en otro proveedor).
 
 ---
 
 ## 4. Qué te falta definir (y cómo hacerlo tú misma)
 
 ### a) Número de WhatsApp, Instagram y correo
-Abre `js/config.js` y reemplaza los 3 valores marcados con `⚠️ PLACEHOLDER`. Se actualizan
+Abre `lib/site-config.ts` y reemplaza los valores de WhatsApp, Instagram y correo — se actualizan
 automáticamente en todo el sitio (header, footer y botones de "agendar hora").
 
 ### b) Fotografías reales
-Hoy hay imágenes de referencia (dibujos lineales simples) en la carpeta `img/`:
+Hoy hay imágenes de referencia (dibujos lineales simples) en `public/img/`:
 - `placeholder-retrato.svg` → foto tuya en Sobre mí
 - `placeholder-blog-*.svg` → imágenes de cada artículo del blog
 
-Para reemplazarlas: agrega tu foto a la carpeta `img/` (ej. `img/francisca-retrato.jpg`) y cambia el
-atributo `src="img/placeholder-retrato.svg"` por `src="img/francisca-retrato.jpg"` en `sobre-mi.html`
-(y lo mismo para las imágenes de blog). No olvides escribir una descripción breve en el atributo `alt`.
+Para reemplazarlas: agrega tu foto a esa carpeta (ej. `public/img/francisca-retrato.jpg`) y cambia
+el atributo `src` en `app/sobre-mi/page.tsx` (y lo mismo para las imágenes de blog en
+`app/blog/page.tsx`). No olvides escribir una descripción breve en el atributo `alt`.
 
-### c) Proveedor de newsletter definitivo
-Los formularios de "El cielo del mes" (en `partials/newsletter.html` y `partials/footer.html`) son
-un placeholder visual: hoy no envían datos a ningún lado. Cuando definas tu proveedor (por ejemplo
-MailerLite), su plataforma te entregará un código de "embed" (HTML) para pegar en reemplazo del
-`<form>...</form>` de esos dos archivos. No necesitas tocar nada más del sitio para esto.
+### c) Newsletter — MailerLite
+El formulario de "El cielo del mes" (home y footer) ya está conectado a MailerLite: pide correo,
+fecha/hora de nacimiento y ciudad, calcula signo solar/lunar/ascendente, y da de alta a la
+suscriptora vía `api/subscribe.js`. Solo falta configurar las variables de entorno de la sección 3.
 
 ### d) Dominio
 Aún no tienes uno — puedes publicar el sitio en la URL gratuita de Vercel
@@ -113,50 +89,8 @@ Aún no tienes uno — puedes publicar el sitio en la URL gratuita de Vercel
 
 ---
 
-## 5. AI Gateway — Generación de texto con IA (desarrollo local)
+## 5. Si necesitas ayuda para editar textos más adelante
 
-El proyecto incluye configuración para usar **Vercel AI Gateway** con el SDK de `ai` para generar
-texto mediante IA. Esto es útil si quieres crear características como:
-- Respuestas personalizadas basadas en datos del usuario
-- Análisis automático de consultas
-- Generación de contenido dinámico
-
-### Configuración local
-
-1. **Obtén tu API key de Vercel:**
-   - Ve a https://console.vercel.com/account/settings/tokens
-   - Copia tu token de acceso
-
-2. **Crea tu archivo `.env.local`:**
-   ```bash
-   # Copia el archivo de ejemplo
-   cp .env.local.example .env.local
-   
-   # Abre .env.local y reemplaza la clave placeholder con tu API key
-   # No subas este archivo a GitHub (ya está en .gitignore)
-   ```
-
-3. **Ejecuta el ejemplo:**
-   ```bash
-   npm run ai-gateway
-   ```
-   
-   Verás la respuesta de IA en la terminal junto con el conteo de tokens (útil para monitorear costos).
-
-### Detalles técnicos
-
-- **Lenguaje:** TypeScript (archivo `index.ts`)
-- **Modelo:** OpenAI GPT-4 Turbo (configurable en `index.ts`)
-- **Streaming:** La respuesta se recibe en tiempo real, palabra por palabra
-- **Token tracking:** Se registran tokens de entrada, salida y total para cálculo de costos
-
-Para entender más sobre cómo funciona, abre `index.ts` en tu editor — el código es legible y
-está comentado.
-
----
-
-## 6. Si necesitas ayuda para editar textos más adelante
-
-Puedes pedirle a Claude Code (o a cualquier persona con conocimientos básicos de HTML) que edite
-directamente el archivo `.html` de la página correspondiente. Como el texto está separado del diseño
-(que vive en `css/`), es muy difícil "romper" el sitio solo editando palabras.
+Puedes pedirle a Claude Code (o a cualquier persona con conocimientos básicos de React) que edite
+directamente el archivo `page.tsx` de la página correspondiente dentro de `app/`, o el componente
+que quieras cambiar dentro de `components/`.

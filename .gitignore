@@ -2,5 +2,30 @@
 node_modules/
 .vscode/
 .claude/settings.local.json
-.env.local
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
 dist/
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
