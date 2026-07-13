@@ -4,6 +4,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/site-config";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -20,12 +21,41 @@ const mulish = Mulish({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "Astrología y Herbolaria · Francisca Giner Mellado",
     template: "%s · Astrología y Herbolaria",
   },
   description:
     "Acompañamiento simbólico y práctica ritual en Santiago, Chile. Astrología, tarot y saberes de herbolaria heredados, abordados con rigor histórico y calidez.",
+  openGraph: {
+    type: "website",
+    locale: "es_CL",
+    siteName: "Astrología y Herbolaria",
+    title: "Astrología y Herbolaria · Francisca Giner Mellado",
+    description:
+      "Acompañamiento simbólico y práctica ritual en Santiago, Chile. Astrología, tarot y saberes de herbolaria heredados, abordados con rigor histórico y calidez.",
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Astrología y Herbolaria",
+  founder: {
+    "@type": "Person",
+    name: "Francisca Giner Mellado",
+  },
+  description:
+    "Acompañamiento simbólico y práctica ritual: astrología, tarot y saberes de herbolaria heredados, abordados con rigor histórico y calidez.",
+  url: siteConfig.url,
+  email: siteConfig.email,
+  sameAs: [siteConfig.instagram],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Santiago",
+    addressCountry: "CL",
+  },
 };
 
 export default function RootLayout({
@@ -36,6 +66,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={cn(cormorant.variable, mulish.variable, "font-sans", geist.variable)}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />
