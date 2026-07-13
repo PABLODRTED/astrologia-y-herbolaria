@@ -33,11 +33,14 @@ A project skill at `.claude/skills/design-taste-frontend/SKILL.md` governs visua
 These skills are optimized for the three project focuses: site improvements, SEO/marketing continuous service, and future business automation.
 
 ### For Website Improvements (Astrología/Herbolaria)
-- `/design-taste-frontend` - Anti-slop frontend design guidance (custom skill)
+- `/design-taste-frontend` - Anti-slop frontend design guidance (custom skill) ⭐
 - `/design:design-critique` - Design quality review and critique
 - `/design:accessibility-review` - WCAG compliance and accessibility checks
+- `/design:ux-copy` - Website copywriting and UX microcopy
 - `/code-review` - HTML/CSS/JS code audit
+- `/simplify` - Code cleanup and refactoring
 - `/verify` - Test changes in live site
+- `/run` - Launch the site locally
 
 ### For SEO/Marketing Continuous Service
 - `/searchfit-seo:seo-audit` - Full SEO audit and analysis
@@ -66,11 +69,11 @@ These skills are disabled by default but available when you start implementing b
 ## MCP Connectors & Authentication
 
 For full functionality, these MCP servers can be authenticated via claude.ai settings or `/mcp`:
-- **GitHub** (plugin:engineering:github) - For deployment to Cloudflare Pages/GitHub Pages
+- **GitHub** (plugin:engineering:github) - For source control; Vercel deploys automatically from the `origin` remote
 - **Notion** (plugin:productivity:notion) - For project organization and documentation
 - **Linear** (plugin:productivity:linear) - For task automation (when implementing business automation)
 - **Slack** (plugin:productivity:slack) - For notifications and communication (optional)
 
 ## Deployment
 
-Intended target is Cloudflare Pages (Workers & Pages → Pages → Connect to Git), with build command empty and output directory `/` (no framework preset). GitHub Pages is a documented fallback (`main` branch as source).
+Deployed on Vercel — project `astrologia-y-herbolaria1/astrologia-herbolaria`, linked to the `origin` remote (`github.com/franciscaginer-hash/astrologia-y-herbolaria`) for automatic deploys on push. No build command/framework preset needed (static site). Live at https://astrologia-herbolaria.vercel.app. Cloudflare Pages / GitHub Pages are no longer the deploy target.
