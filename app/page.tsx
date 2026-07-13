@@ -8,14 +8,15 @@ export default function Home() {
     <>
       {/* ============ HERO ============ */}
       <section className="contenedor py-xl pb-lg text-center">
-        <svg
-          className="mx-auto mb-sm block h-8 w-8 stroke-oro stroke-1"
-          viewBox="0 0 32 32"
-          fill="none"
-          aria-hidden="true"
+        <video
+          className="mx-auto mb-sm block w-full max-w-[280px] rounded-borde"
+          autoPlay
+          muted
+          loop
+          playsInline
         >
-          <path d="M16 4a12 12 0 1 0 0 24 9 9 0 0 1 0-24z" />
-        </svg>
+          <source src="/img/logo-luna-rosa.mp4" type="video/mp4" />
+        </video>
         <p className="mb-sm font-titulos text-[1.4rem] text-ciruela-suave">El umbral</p>
         <h1 className="text-[2.25rem] md:text-[3.25rem]">Astrología y Herbolaria</h1>
         <p className="mx-auto mb-md max-w-[60ch] text-[1.05rem]">
