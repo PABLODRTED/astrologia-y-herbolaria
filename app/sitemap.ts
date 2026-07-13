@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/servicios",
     "/sobre-mi",
     "/blog",
+    "/blog/cartografias-del-umbral",
     "/blog/astrologia-psicologica",
     "/blog/herbolaria-ancestral",
     "/blog/tarot-como-umbral",

@@ -70,8 +70,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-sm focus:top-sm focus:z-50 focus:rounded-borde focus:bg-ciruela focus:px-md focus:py-sm focus:text-champan"
+        >
+          Saltar al contenido principal
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="contenido">{children}</main>
         <Footer />
       </body>
     </html>
