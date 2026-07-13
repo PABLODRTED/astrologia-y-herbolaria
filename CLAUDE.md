@@ -69,11 +69,11 @@ These skills are disabled by default but available when you start implementing b
 ## MCP Connectors & Authentication
 
 For full functionality, these MCP servers can be authenticated via claude.ai settings or `/mcp`:
-- **GitHub** (plugin:engineering:github) - For deployment to Cloudflare Pages/GitHub Pages
+- **GitHub** (plugin:engineering:github) - For source control; Vercel deploys automatically from the `origin` remote
 - **Notion** (plugin:productivity:notion) - For project organization and documentation
 - **Linear** (plugin:productivity:linear) - For task automation (when implementing business automation)
 - **Slack** (plugin:productivity:slack) - For notifications and communication (optional)
 
 ## Deployment
 
-Intended target is Cloudflare Pages (Workers & Pages → Pages → Connect to Git), with build command empty and output directory `/` (no framework preset). GitHub Pages is a documented fallback (`main` branch as source).
+Deployed on Vercel — project `astrologia-y-herbolaria1/astrologia-herbolaria`, linked to the `origin` remote (`github.com/franciscaginer-hash/astrologia-y-herbolaria`) for automatic deploys on push. No build command/framework preset needed (static site). Live at https://astrologia-herbolaria.vercel.app. Cloudflare Pages / GitHub Pages are no longer the deploy target.
