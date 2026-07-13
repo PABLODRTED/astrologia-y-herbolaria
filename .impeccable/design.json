@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-07T22:52:35Z",
+  "title": "Design System: Astrología y Herbolaria",
+  "extensions": {
+    "colorMeta": {
+      "ciruela": {
+        "role": "primary",
+        "displayName": "Ciruela Profunda",
+        "canonical": "oklch(32% 0.09 305)",
+        "tonalRamp": ["#140F1E", "#241934", "#332448", "#3E2D5C", "#5A4478", "#7A639C", "#A491BE", "#D3C9E2"]
+      },
+      "ciruela-suave": {
+        "role": "primary-variant",
+        "displayName": "Ciruela Suave",
+        "canonical": "oklch(42% 0.09 305)",
+        "tonalRamp": ["#241934", "#332448", "#473261", "#5A4478", "#7A639C", "#9A82B4", "#BBA6D0", "#DDD2EA"]
+      },
+      "oro": {
+        "role": "secondary",
+        "displayName": "Oro Ceremonial",
+        "canonical": "oklch(66% 0.09 75)",
+        "tonalRamp": ["#4A3A1E", "#6C5629", "#8E7136", "#B8924A", "#C9A968", "#D9C08C", "#E7D6B0", "#F3EAD6"]
+      },
+      "champan": {
+        "role": "neutral",
+        "displayName": "Champán Cálido",
+        "canonical": "oklch(92% 0.02 70)",
+        "tonalRamp": ["#3A2E1F", "#6B5640", "#9C8261", "#CDB090", "#F2E6D6", "#F5EDE1", "#F9F3EB", "#FCF9F5"]
+      },
+      "rosa-palido": {
+        "role": "neutral",
+        "displayName": "Rosa Pálido Ritual",
+        "canonical": "oklch(93% 0.015 30)",
+        "tonalRamp": ["#3B2C28", "#6D5450", "#9F7C76", "#D1A69E", "#F6E9E4", "#F8EEEA", "#FAF4F1", "#FCF9F7"]
+      },
+      "blanco": {
+        "role": "neutral",
+        "displayName": "Blanco",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#1A1A1A", "#404040", "#666666", "#8C8C8C", "#B3B3B3", "#D9D9D9", "#F0F0F0", "#FFFFFF"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Títulos h1-h3 y el tagline del hero. Nunca fuera de estos usos." },
+      "body": { "displayName": "Body", "purpose": "Todo el texto de cuerpo, botones, navegación." },
+      "label": { "displayName": "Label", "purpose": "Subtítulo del logo y texto de apoyo uppercase-tracked." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-standard", "value": "ease", "purpose": "Transición estándar en botones y enlaces (border-color, color, background-color), 0.2s." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "480px" },
+      { "name": "md", "value": "640px" },
+      { "name": "lg", "value": "768px" },
+      { "name": "xl", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal (ej. 'Agendar hora'). Fondo ciruela sólido, se activa con borde dorado en hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Agendar hora</a>",
+      "css": ".ds-btn-primary { display: inline-block; font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 0.85rem 1.6rem; border-radius: 4px; border: 1px solid transparent; background-color: #3E2D5C; color: #F2E6D6; cursor: pointer; transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { border-color: #B8924A; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "CTA secundaria (ej. 'Ver servicios'). Contorno ciruela, texto se dora en hover.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Ver servicios</a>",
+      "css": ".ds-btn-secondary { display: inline-block; font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 0.85rem 1.6rem; border-radius: 4px; background-color: transparent; color: #3E2D5C; border: 1px solid #3E2D5C; cursor: pointer; transition: border-color 0.2s ease, color 0.2s ease; } .ds-btn-secondary:hover, .ds-btn-secondary:focus-visible { color: #B8924A; border-color: #B8924A; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card-service",
+      "description": "Tarjeta de servicio con precio y CTA, fondo blanco para destacar sobre el fondo cálido.",
+      "html": "<div class=\"ds-card-service\"><h3>Lectura de carta natal</h3><p class=\"ds-card-price\">$45.000</p><p class=\"ds-card-for\">Primera consulta</p></div>",
+      "css": ".ds-card-service { background-color: #FFFFFF; border: 1px solid rgba(62,45,92,0.12); border-radius: 4px; padding: 2rem; display: flex; flex-direction: column; gap: 0.5rem; } .ds-card-price { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: #3E2D5C; margin-top: 0.5rem; } .ds-card-for { font-size: 0.9rem; color: #5A4478; font-style: italic; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Header sticky con logo serif + label uppercase, enlace activo marcado con borde inferior dorado.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-logo\">Astrología y Herbolaria<span>El umbral</span></a><nav class=\"ds-nav-links\"><a href=\"#\" class=\"activo\">Inicio</a><a href=\"#\">Servicios</a></nav></header>",
+      "css": ".ds-nav { background-color: #F2E6D6; border-bottom: 1px solid rgba(62,45,92,0.15); display: flex; align-items: center; justify-content: space-between; padding: 1rem; } .ds-nav-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 500; color: #3E2D5C; text-decoration: none; line-height: 1.1; } .ds-nav-logo span { display: block; font-family: 'Mulish', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: #5A4478; } .ds-nav-links a { text-decoration: none; font-size: 0.95rem; letter-spacing: 0.02em; color: #3E2D5C; margin-left: 2rem; } .ds-nav-links a.activo { border-bottom: 1px solid #B8924A; }"
+    },
+    {
+      "name": "Featured CTA",
+      "kind": "custom",
+      "refersTo": "cta-destacado",
+      "description": "Bloque de conversión principal (agendar hora): único lugar donde el ciruela es fondo de sección completo.",
+      "html": "<section class=\"ds-cta\"><h2>¿Lista para agendar?</h2><a class=\"ds-cta-btn\" href=\"#\">Agendar hora</a></section>",
+      "css": ".ds-cta { background-color: #3E2D5C; color: #F2E6D6; text-align: center; border-radius: 4px; padding: 3.5rem 2rem; } .ds-cta h2 { color: #F2E6D6; } .ds-cta-btn { display: inline-block; padding: 0.85rem 1.6rem; border-radius: 4px; color: #F2E6D6; border: 1px solid #F2E6D6; text-decoration: none; transition: color 0.2s ease, border-color 0.2s ease; } .ds-cta-btn:hover { color: #B8924A; border-color: #B8924A; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Umbral",
+    "overview": "El sistema toma su nombre del propio tagline del sitio: el umbral es el cruce entre lo cotidiano y lo ritual, la puerta simbólica que se atraviesa con calma, no con espectáculo. Cada decisión visual sirve esa idea de tránsito contenido — nunca dramática, nunca genérica.\n\nEs un sistema plano por capas de color: dos fondos cálidos que alternan (champán y rosa pálido) crean la sensación de moverse entre habitaciones de una misma casa, con la ciruela como estructura (texto, líneas, navegación) y el oro reservado casi por completo para el instante del hover — el destello que marca que algo se activó. Los componentes son táctiles y ceremoniales: cada botón, cada tarjeta, responde con un gesto claro que se siente como un pequeño rito, no como una animación decorativa.\n\nEl sistema rechaza explícitamente la estética new-age genérica — sin marcos dorados decorativos, sin degradados celestes, sin copy vacío de plantilla. La iconografía celeste entra solo como acento puntual y lineal, nunca como fondo ni como marco.",
+    "keyCharacteristics": [
+      "Paleta cálida y restringida: dos fondos, un color estructural, un acento escaso",
+      "Serif elegante para títulos (Cormorant Garamond) + sans cálida para cuerpo (Mulish)",
+      "Sin sombras — la profundidad viene de la alternancia de fondo, no de la elevación",
+      "El oro es exclusivamente un gesto de interacción, nunca un color de superficie"
+    ],
+    "rules": [
+      { "name": "La Regla del Oro Escaso", "body": "El oro nunca es un color de superficie ni de fondo — solo aparece en el instante de interacción (hover, foco) o como trazo de un ícono lineal puntual. Si el oro ocupa más del 5% de una vista, algo se rompió.", "section": "colors" },
+      { "name": "La Regla de la Casa de Dos Cuartos", "body": "El sitio nunca usa más de dos fondos en la misma vista (champán y rosa pálido). Un tercer fondo cálido diluye el tránsito que la alternancia está diseñada para transmitir.", "section": "colors" },
+      { "name": "La Regla del Rol Único", "body": "Cormorant Garamond solo aparece en títulos (h1-h3) y en el tagline del hero. Mulish cubre todo lo demás. Nunca se mezclan dentro del mismo elemento.", "section": "typography" },
+      { "name": "La Regla Sin Sombra", "body": "Ningún componente usa box-shadow. Si un elemento necesita destacar, se resuelve con cambio de fondo o borde fino — nunca con sombra.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do alternar solo entre champán y rosa pálido como fondos de sección",
+      "Do reservar el oro exclusivamente para hover/foco y el ícono lineal simbólico",
+      "Do mantener Cormorant Garamond solo en títulos y Mulish en todo lo demás",
+      "Do usar la iconografía celeste como acento lineal puntual, nunca como ilustración dominante o fondo",
+      "Do anclar el tono ritual wellness en algo concreto de la práctica, nunca en vaguedad mística sola"
+    ],
+    "donts": [
+      "Don't usar marcos dorados decorativos, degradados celestes, ni copy Lorem-ipsum de plantilla",
+      "Don't introducir sombras en ningún componente",
+      "Don't dejar que el tono ritual wellness se vuelva genérico new-age",
+      "Don't usar border-left/border-right mayor a 1px como acento decorativo — cero excepciones desde la corrección de .nota-cuidado",
+      "Don't mezclar Cormorant Garamond y Mulish dentro del mismo elemento de texto"
+    ]
+  }
+}

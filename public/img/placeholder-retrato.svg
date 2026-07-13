@@ -1,0 +1,12 @@
+<!-- Placeholder de retrato — reemplaza este archivo por una fotografía real
+     (por ejemplo img/francisca-retrato.jpg) y actualiza el <img src> en
+     sobre-mi.html. No olvides escribir un alt text descriptivo. -->
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="500" fill="#F6E9E4"/>
+  <!-- Arco de umbral, trazo fino ciruela -->
+  <path d="M120 460 V 230 C 120 140 155 80 200 80 C 245 80 280 140 280 230 V 460"
+        fill="none" stroke="#3E2D5C" stroke-width="1"/>
+  <!-- Luna creciente, trazo fino oro -->
+  <path d="M212 190 A 34 34 0 1 0 212 258 A 27 27 0 1 1 212 190 Z"
+        fill="none" stroke="#B8924A" stroke-width="1"/>
+</svg>
