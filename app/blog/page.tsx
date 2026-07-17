@@ -20,6 +20,14 @@ export default function Blog() {
           <h2>Artículos recientes</h2>
           <div className="grid grid-cols-1 gap-md min-[900px]:grid-cols-3">
             <BlogCard
+              href="/blog/cartografias-del-umbral"
+              imagen="/img/placeholder-blog-catalogo.svg"
+              imagenAlt="Ilustración lineal de una brújula, trazo fino"
+              fecha="13 de julio de 2026"
+              titulo="Cartografías del umbral: un recorrido por los servicios de Astrología y Herbolaria"
+              extracto="Un recorrido periodístico por los siete formatos de acompañamiento, servicio por servicio."
+            />
+            <BlogCard
               href="/blog/astrologia-psicologica"
               imagen="/img/placeholder-blog-astrologia.svg"
               imagenAlt="Ilustración lineal de una constelación, con puntos unidos por trazos finos"
