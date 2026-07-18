@@ -3,6 +3,7 @@ import { PageHero } from "@/components/page-hero";
 import { ServiceCard } from "@/components/service-card";
 import { NotaCuidado } from "@/components/nota-cuidado";
 import { CtaWhatsapp } from "@/components/cta-whatsapp";
+import { formatCLP } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Servicios",
@@ -50,7 +51,7 @@ export default function Servicios() {
               titulo="Carta natal con entrevista previa"
               descripcion="Lectura completa de carta natal, precedida de una entrevista para situar tu momento y tus preguntas."
               paraQuien="Para quien quiere una primera aproximación profunda a su carta."
-              precio="$75.000"
+              precio={formatCLP(75000)}
               ctaLabel="Agendar por WhatsApp"
               ctaMensaje="Hola, me gustaría agendar una Carta natal con entrevista previa."
             />
@@ -58,7 +59,7 @@ export default function Servicios() {
               titulo="Sesión de astrología · 60 min"
               descripcion="Conversación en torno a tu carta natal o a un tránsito específico que quieras revisar."
               paraQuien="Para quien ya conoce su carta y quiere profundizar en un tema."
-              precio="$50.000"
+              precio={formatCLP(50000)}
               ctaLabel="Agendar por WhatsApp"
               ctaMensaje="Hola, me gustaría agendar una Sesión de astrología de 60 minutos."
             />
@@ -66,7 +67,7 @@ export default function Servicios() {
               titulo="Revolución solar"
               descripcion="Lectura del ciclo anual que comienza en tu cumpleaños, como marco para pensar el año que se abre."
               paraQuien="Para quien quiere situar el año que comienza."
-              precio="$50.000"
+              precio={formatCLP(50000)}
               ctaLabel="Agendar por WhatsApp"
               ctaMensaje="Hola, me gustaría agendar una sesión de Revolución solar."
             />
@@ -74,7 +75,7 @@ export default function Servicios() {
               titulo="Sesión mensual de acompañamiento"
               descripcion="Encuentro breve y periódico para sostener un proceso en el tiempo, revisando tránsitos y preguntas del mes."
               paraQuien="Para quien ya inició un proceso y quiere continuidad."
-              precio="$35.000"
+              precio={formatCLP(35000)}
               ctaLabel="Agendar por WhatsApp"
               ctaMensaje="Hola, me gustaría agendar una Sesión mensual de acompañamiento."
             />
@@ -82,7 +83,7 @@ export default function Servicios() {
               titulo="Sesión de astrología · 30 min"
               descripcion="Conversación breve y acotada a una pregunta puntual sobre tu carta o tu momento actual."
               paraQuien="Para una consulta específica, sin extenderse."
-              precio="$30.000"
+              precio={formatCLP(30000)}
               ctaLabel="Agendar por WhatsApp"
               ctaMensaje="Hola, me gustaría agendar una Sesión de astrología de 30 minutos."
             />
@@ -90,7 +91,7 @@ export default function Servicios() {
               titulo="Sesión de tarot · 60 min"
               descripcion="Lectura extendida de tarot como imagen y espejo para pensar una situación o etapa en curso."
               paraQuien="Para quien quiere explorar un tema con detención."
-              precio="$35.000"
+              precio={formatCLP(35000)}
               ctaLabel="Agendar por WhatsApp"
               ctaMensaje="Hola, me gustaría agendar una Sesión de tarot de 60 minutos."
             />
@@ -98,7 +99,7 @@ export default function Servicios() {
               titulo="Sesión de tarot · 30 min"
               descripcion="Una lectura breve, acotada a una pregunta concreta."
               paraQuien="Para una consulta puntual."
-              precio="$20.000"
+              precio={formatCLP(20000)}
               ctaLabel="Agendar por WhatsApp"
               ctaMensaje="Hola, me gustaría agendar una Sesión de tarot de 30 minutos."
             />
@@ -195,7 +196,7 @@ export default function Servicios() {
               titulo="Diagnóstico, limpiezas, amuletos y rituales"
               descripcion="Una lectura del gesto ritual apropiado para tu situación, y su elaboración según lo que corresponda: limpieza, amuleto o ritual acotado."
               paraQuien="Para quien busca un gesto simbólico para acompañar un proceso o un umbral concreto."
-              precio="$40.000 – $120.000"
+              precio={`${formatCLP(40000)} – ${formatCLP(120000)}`}
               ctaLabel="Consultar por WhatsApp"
               ctaMensaje="Hola, me gustaría consultar por Diagnóstico, limpiezas, amuletos y rituales."
             />
