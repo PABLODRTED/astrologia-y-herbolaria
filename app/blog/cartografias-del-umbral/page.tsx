@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArticleHeader } from "@/components/article-header";
 import { NotaCuidado } from "@/components/nota-cuidado";
 import { CtaWhatsapp } from "@/components/cta-whatsapp";
+import { formatFecha } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Cartografías del umbral: un recorrido por los servicios de Astrología y Herbolaria",
@@ -15,7 +16,7 @@ export default function ArticuloCartografiasDelUmbral() {
       <section className="bg-rosa-palido py-lg">
         <div className="contenedor mx-auto max-w-[68ch]">
           <ArticleHeader
-            fecha="13 de julio de 2026"
+            fecha={formatFecha(new Date(2026, 6, 13))}
             titulo="Cartografías del umbral: un recorrido por los servicios de Astrología y Herbolaria"
           />
 

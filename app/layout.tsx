@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Mulish, Geist } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     description:
       "Acompañamiento simbólico y práctica ritual en Santiago, Chile. Astrología, tarot y saberes de herbolaria heredados, abordados con rigor histórico y calidez.",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#F2E6D6",
 };
 
 const structuredData = {
