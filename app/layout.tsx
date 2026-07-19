@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Mulish, Geist } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { MotionProvider } from "@/components/motion/motion-provider";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -36,9 +37,11 @@ export default function RootLayout({
   return (
     <html lang="es" className={cn(cormorant.variable, mulish.variable, "font-sans", geist.variable)}>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <MotionProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

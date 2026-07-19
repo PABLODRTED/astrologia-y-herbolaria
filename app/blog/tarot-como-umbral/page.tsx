@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArticleHeader } from "@/components/article-header";
 import { NotaCuidado } from "@/components/nota-cuidado";
 import { CtaWhatsapp } from "@/components/cta-whatsapp";
+import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "El tarot como umbral, no como respuesta",
@@ -13,6 +14,7 @@ export default function ArticuloTarotComoUmbral() {
     <>
       <section className="bg-rosa-palido py-lg">
         <div className="contenedor mx-auto max-w-[68ch]">
+          <ScrollReveal>
           <ArticleHeader fecha="5 de junio de 2026" titulo="El tarot como umbral, no como respuesta" />
 
           <p>
@@ -46,6 +48,7 @@ export default function ArticuloTarotComoUmbral() {
             su historia particular. No hay una interpretación única ni predeterminada. Hay, en cambio, un
             proceso de correspondencia entre la imagen y la propia experiencia.
           </p>
+          </ScrollReveal>
 
           <NotaCuidado>
             Este artículo tiene un carácter general y educativo. No reemplaza una sesión personalizada ni
@@ -55,11 +58,13 @@ export default function ArticuloTarotComoUmbral() {
         </div>
       </section>
 
-      <section className="bg-champan py-lg">
-        <div className="contenedor">
-          <CtaWhatsapp />
-        </div>
-      </section>
+      <ScrollReveal>
+        <section className="bg-champan py-lg">
+          <div className="contenedor">
+            <CtaWhatsapp />
+          </div>
+        </section>
+      </ScrollReveal>
     </>
   );
 }

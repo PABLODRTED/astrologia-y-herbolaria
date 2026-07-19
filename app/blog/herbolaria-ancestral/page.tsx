@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArticleHeader } from "@/components/article-header";
 import { NotaCuidado } from "@/components/nota-cuidado";
 import { CtaWhatsapp } from "@/components/cta-whatsapp";
+import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Herbolaria como saber heredado",
@@ -14,6 +15,7 @@ export default function ArticuloHerbolariaAncestral() {
     <>
       <section className="bg-rosa-palido py-lg">
         <div className="contenedor mx-auto max-w-[68ch]">
+          <ScrollReveal>
           <ArticleHeader fecha="20 de junio de 2026" titulo="Herbolaria como saber heredado" />
 
           <p>
@@ -45,6 +47,7 @@ export default function ArticuloHerbolariaAncestral() {
             condición de salud física o mental de por medio, ese es siempre el lugar de un profesional
             competente; esta práctica ritual se sostiene en paralelo, como gesto simbólico, no como tratamiento.
           </p>
+          </ScrollReveal>
 
           <NotaCuidado>
             Este artículo tiene un carácter general y educativo. No contiene indicaciones de uso ni afirmaciones
@@ -54,11 +57,13 @@ export default function ArticuloHerbolariaAncestral() {
         </div>
       </section>
 
-      <section className="bg-champan py-lg">
-        <div className="contenedor">
-          <CtaWhatsapp />
-        </div>
-      </section>
+      <ScrollReveal>
+        <section className="bg-champan py-lg">
+          <div className="contenedor">
+            <CtaWhatsapp />
+          </div>
+        </section>
+      </ScrollReveal>
     </>
   );
 }

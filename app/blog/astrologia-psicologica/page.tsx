@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArticleHeader } from "@/components/article-header";
 import { NotaCuidado } from "@/components/nota-cuidado";
 import { CtaWhatsapp } from "@/components/cta-whatsapp";
+import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "La carta natal como mapa, no como pronóstico",
@@ -13,6 +14,7 @@ export default function ArticuloAstrologiaPsicologica() {
     <>
       <section className="bg-rosa-palido py-lg">
         <div className="contenedor mx-auto max-w-[68ch]">
+          <ScrollReveal>
           <ArticleHeader fecha="3 de julio de 2026" titulo="La carta natal como mapa, no como pronóstico" />
 
           <p>
@@ -54,6 +56,7 @@ export default function ArticuloAstrologiaPsicologica() {
             puede preguntar &ldquo;¿qué patrón estoy repitiendo?&rdquo; o &ldquo;¿qué habría que habitar
             distinto en este ciclo?&rdquo;. Son preguntas que abren proceso, no que lo cierran.
           </p>
+          </ScrollReveal>
 
           <NotaCuidado>
             Este artículo tiene un carácter general y educativo. No reemplaza una sesión personalizada ni
@@ -63,11 +66,13 @@ export default function ArticuloAstrologiaPsicologica() {
         </div>
       </section>
 
-      <section className="bg-champan py-lg">
-        <div className="contenedor">
-          <CtaWhatsapp />
-        </div>
-      </section>
+      <ScrollReveal>
+        <section className="bg-champan py-lg">
+          <div className="contenedor">
+            <CtaWhatsapp />
+          </div>
+        </section>
+      </ScrollReveal>
     </>
   );
 }
